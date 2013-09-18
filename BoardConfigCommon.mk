@@ -40,6 +40,19 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
+DTBS:
+	make -C $(TARGET_KERNEL_SOURCE) ARCH=arm CROSS_COMPILE="arm-eabi-" O=$(KERNEL_OUT) dtbs
+
+TARGET_KERNEL_MODULES += DTBS
+
+DTB:
+	cat $(KERNEL_OUT)/arch/arm/boot/*.dtb > $(OUT)/msm8960dt.dtb
+
+TARGET_KERNEL_MODULES += DTB
+
+# Special boot.img packaging w/ dtb appended to the end
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/boot.mk
+
 # assert
 TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1055,xt1056,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon,ghost_retail,ghost,xt1080,obake_verizon,xt1080m,obake
 
