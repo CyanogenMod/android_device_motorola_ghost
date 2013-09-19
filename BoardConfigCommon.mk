@@ -40,15 +40,18 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
-DTBS:
-	make -C $(TARGET_KERNEL_SOURCE) ARCH=arm CROSS_COMPILE="arm-eabi-" O=$(KERNEL_OUT) dtbs
-
-TARGET_KERNEL_MODULES += DTBS
-
 DTB:
+	make -C $(TARGET_KERNEL_SOURCE) ARCH=arm CROSS_COMPILE="arm-eabi-" O=$(KERNEL_OUT) dtbs
 	cat $(KERNEL_OUT)/arch/arm/boot/*.dtb > $(OUT)/msm8960dt.dtb
 
 TARGET_KERNEL_MODULES += DTB
+
+WLAN_MODULES:
+	mkdir $(KERNEL_MODULES_OUT)/prima
+	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
+	ln -sf /system/lib/modules/prima/prima_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
+
+TARGET_KERNEL_MODULES += WLAN_MODULES
 
 # Special boot.img packaging w/ dtb appended to the end
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/boot.mk
