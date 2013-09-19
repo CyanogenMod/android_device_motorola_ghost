@@ -4,11 +4,16 @@ bin/ap_gain.bin
 bin/ap_gain_mmul.bin
 bin/bootmodem
 bin/defuse
+bin/diag_klog
+bin/diag_mdlog
+bin/efsks
 bin/hardware_revisions.sh
+bin/ks
 bin/moto_com.sh
 bin/moto_com_post.sh
 bin/mpdecision
 bin/msp430
+bin/qcks
 bin/qdumpd
 bin/qmi_motext_hook
 bin/qmiproxy
@@ -25,7 +30,10 @@ lib/hw/sensors.msm8960.so
 
 # Libs
 lib/libacdbloader.so
+lib/libadspd.so
+lib/libadspd-jni.so
 lib/libaudcal.so
+lib/libaudioalsa.so
 lib/libbabysit.so
 lib/libconfigdb.so
 lib/libcsd-client.so
@@ -35,8 +43,11 @@ lib/libdsprofile.so
 lib/libdss.so
 lib/libdsucsd.so
 lib/libdsutils.so
+lib/libDxHdcp.so
 lib/libgemini.so
+lib/libI420colorconvert.so
 lib/libidl.so
+lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
 lib/libloc_api_v02.so
@@ -133,3 +144,5 @@ etc/firmware/tfa9890_n1c2.patch
 etc/firmware/tfa9890_ringtone_table.preset
 etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
+etc/DxHDCP.cfg
+etc/hdcp_8960.dat.enc

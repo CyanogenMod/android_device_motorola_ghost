@@ -53,7 +53,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.mmi.boot \
     init.mmi.touch.sh \
-    init.qcom.sh
+    init.qcom.post_boot.sh \
+    init.qcom.sh \
+    init.qcom.wifi.sh
 
 PRODUCT_PACKAGES += mkfs.f2fs_arm
 
