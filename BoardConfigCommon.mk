@@ -47,7 +47,7 @@ DTB:
 TARGET_KERNEL_MODULES += DTB
 
 WLAN_MODULES:
-	mkdir $(KERNEL_MODULES_OUT)/prima
+	mkdir -p $(KERNEL_MODULES_OUT)/prima
 	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
 	ln -sf /system/lib/modules/prima/prima_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
 
