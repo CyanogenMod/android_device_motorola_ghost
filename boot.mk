@@ -15,8 +15,3 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
-	$(hide) mv $(INSTALLED_RECOVERYIMAGE_TARGET) $(INSTALLED_RECOVERYIMAGE_TARGET).tmp
-	$(hide) cat $(INSTALLED_RECOVERYIMAGE_TARGET).tmp $(OUT)/msm8960dt.dtb > $(INSTALLED_RECOVERYIMAGE_TARGET)
-	$(hide) rm $(INSTALLED_RECOVERYIMAGE_TARGET).tmp
-	@echo -e ${CL_CYN}"Appended dtb to recovery image: $@"${CL_RST}
-
