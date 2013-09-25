@@ -47,8 +47,11 @@ WLAN_MODULES:
 
 TARGET_KERNEL_MODULES += WLAN_MODULES
 
-# assert
+# Assert
 TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1055,xt1056,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon,ghost_retail,ghost,xt1080,obake_verizon,xt1080m,obake
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+
+# TWRP
+TARGET_USERIMAGES_USE_F2FS := true

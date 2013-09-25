@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.wifi.sh
 
+# TWRP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 PRODUCT_PACKAGES += mkfs.f2fs_arm
 
 # Audio configuration
