@@ -52,6 +52,5 @@ TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1055,xt1056,xt1058,ghost_att
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-
-# TWRP
+TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
