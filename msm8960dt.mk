@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
-    init.mmi.boot \
+    init.mmi.boot.sh \
     init.mmi.touch.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh \
