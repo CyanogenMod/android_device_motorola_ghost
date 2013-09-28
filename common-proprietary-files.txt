@@ -33,6 +33,7 @@ lib/hw/sensors.msm8960.so
 lib/libacdbloader.so
 lib/libadspd.so
 lib/libadspd-jni.so
+lib/libadsprpc.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 lib/libbabysit.so
@@ -77,6 +78,7 @@ lib/libril-qcril-hook-oem.so
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 bin/v4l2-qcamera-app
+lib/libl6lencgain.so
 lib/libmmcamera_3a_bayer.so
 lib/libmmcamera_3a_legacy.so
 lib/libmmcamera_frameproc.so
@@ -89,6 +91,10 @@ lib/libmmcamera_statsproc31.so
 lib/libmmcamera_tintless_algo.so
 lib/libmmcamera_tintless_wrapper.so
 lib/libmmcamera_wavelet_lib.so
+lib/libmotcameracalibration.so
+lib/libmot_drscene_detect.so
+lib/libmot_hdr.so
+lib/libmot_sis.so
 lib/liboemcamera.so
 lib/libchromatix_imx135_default_video.so
 lib/libchromatix_imx135_preview.so
