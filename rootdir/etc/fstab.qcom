@@ -4,11 +4,11 @@
 #<src>                                              <mnt_point>      <type>  <mnt_flags and options>                                                              <fs_mgr_flags>
 
 /dev/block/platform/msm_sdcc.1/by-name/system       /system          ext4    rw,noatime,nodiratime,noauto_da_alloc,barrier=1                                      wait
-/dev/block/platform/msm_sdcc.1/by-name/userdata     /data            f2fs    rw,nosuid,nodev,noatime,nodiratime,data=writeback,noauto_da_alloc,barrier=1          wait,check,encryptable=footer
-/dev/block/platform/msm_sdcc.1/by-name/cache        /cache           ext4    rw,nosuid,nodev,noatime,nodiratime,data=writeback,noauto_da_alloc,barrier=1          wait,check
 /dev/block/platform/msm_sdcc.1/by-name/fsg          /fsg             ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:radio_efs_file:s0                       wait,check
 /dev/block/platform/msm_sdcc.1/by-name/customize    /customize       ext4    ro,discard,nosuid,nodev,noatime,nodiratime,noexec                                    wait,check
 /dev/block/platform/msm_sdcc.1/by-name/modem        /firmware        ext4    ro,nosuid,nodev,noatime,nodiratime,barrier=1,context=u:object_r:radio_efs_file:s0    wait,check
+/dev/block/platform/msm_sdcc.1/by-name/userdata     /data            f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,errors=recover,android_emu=0:1015:0664:nocase    wait,encryptable=footer
+/dev/block/platform/msm_sdcc.1/by-name/cache        /cache           ext4    rw,nosuid,nodev,noatime,nodiratime,data=writeback,noauto_da_alloc,barrier=1          wait,check
 /dev/block/platform/msm_sdcc.1/by-name/persist      /persist         ext4    rw,nosuid,nodev,noatime,nodiratime,barrier=1                                         wait,check
 /dev/block/platform/msm_sdcc.1/by-name/boot         /boot            emmc    defaults                                                                             defaults
 /dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery        emmc    defaults                                                                             defaults
