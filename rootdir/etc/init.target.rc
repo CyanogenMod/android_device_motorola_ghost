@@ -245,6 +245,10 @@ on boot
    # Create 12m directory that TCMD can write to
     mkdir /data/local/12m 0755 system shell
 
+
+   # Create moodle directory that MOT_MOODLE can write to
+    mkdir /data/local/moodle 0770 graphics system
+
 # create the necessary data dirs for tpapi with proper permission
     mkdir /dev/tpapi 02770 mot_tpapi mot_tpapi
     mkdir /data/tpapi 02770 mot_tpapi mot_tpapi
@@ -573,6 +577,18 @@ service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh
     user root
     oneshot
     disabled
+
+on property:ro.bind_sdcard=true
+    mount none /data/media /mnt/shell/emulated bind
+    wait /mnt/shell/emulated/0
+    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+
+# This will make sure that sdcard is bound as late_start.
+on nonencrypted
+    setprop ro.bind_sdcard ${persist.bind_sdcard}
+
+on property:vold.decrypt=trigger_restart_framework
+    setprop ro.bind_sdcard ${persist.bind_sdcard}
 
 on property:installd.post_fs_data_ready=1
     # Migration script for sdcard emulation in the kernel

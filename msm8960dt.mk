@@ -101,7 +101,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.camera.facialproc=true \
     ro.qc.sdk.gestures.camera=false \
     ro.qc.sdk.sensors.gestures=true \
-    persist.gps.qmienabled=true
+    persist.gps.qmienabled=true \
+    persist.bind_sdcard=true
 
 # QCOM Display
 PRODUCT_PROPERTY_OVERRIDES += \
