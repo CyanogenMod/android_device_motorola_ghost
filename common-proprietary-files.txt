@@ -25,12 +25,13 @@ bin/thermald
 
 # HAL
 lib/hw/audio.motvr.msm8960.so
-lib/hw/vendor-camera.msm8960.so
+lib/hw/camera.msm8960.so
 lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
 
 # Libs
 lib/libacdbloader.so
+lib/libadropbox.so
 lib/libadspd.so
 lib/libadspd-jni.so
 lib/libadsprpc.so
@@ -53,6 +54,7 @@ lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
 lib/libloc_api_v02.so
+lib/libmdmcutback.so
 lib/libmercury.so
 lib/libmm-color-convertor.so
 lib/libmmjpeg.so
@@ -72,7 +74,9 @@ lib/libqmi_common_so.so
 lib/libqmi_csi.so
 lib/libqmi_csvt_srvc.so
 lib/libqmi_encdec.so
+lib/libquipc_os_api.so
 lib/libril-qcril-hook-oem.so
+lib/libulp2.so
 
 # Camera
 bin/mm-qcamera-app
@@ -153,3 +157,4 @@ etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
 etc/DxHDCP.cfg
 etc/hdcp_8960.dat.enc
+etc/sap.conf
