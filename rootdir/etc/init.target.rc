@@ -100,7 +100,18 @@ on property:ro.modem.no_wdog_chk=1
     mkdir /pds 0755 root root
 
 on fs
-    mount_all /fstab.qcom
+    # Mount system so that recover userdata is available
+    wait /dev/block/platform/msm_sdcc.1/by-name/system
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro barrier=1
+
+    # Mount modem FSG partition
+    wait /dev/block/platform/msm_sdcc.1/by-name/fsg
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0
+
+    #Mount customize partion
+    wait /dev/block/platform/msm_sdcc.1/by-name/customize
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec
+
     restorecon /persist
     restorecon /persist/.bt_nv.bin
     restorecon /persist/WCNSS_qcom_wlan_nv.bin
@@ -122,7 +133,27 @@ on fs
     exec /system/bin/chown root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
     exec /system/bin/chown root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
 
+    # Mount modem immediately after system and trigger modem boot
+    # to speed up modem initialization
+    wait /dev/block/platform/msm_sdcc.1/by-name/modem
+    exec /system/bin/resize2fs /dev/block/platform/msm_sdcc.1/by-name/modem
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0
     start bootmodem
+
+    # Mount userdata -- userdata must in fstab.<ro.hardware> in order to
+    # have functional encryption
+    wait /dev/block/platform/msm_sdcc.1/by-name/userdata
+    mount_all /fstab.qcom
+
+    # Keeping following partitions outside fstab file. As user may not have
+    # these partition flashed on the device. Failure to mount any partition in fstab file
+    # results in failure to launch late-start class.
+    wait /dev/block/platform/msm_sdcc.1/by-name/cache
+    exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/cache
+    exec /system/bin/logwrapper /system/bin/mount_ext4.sh cache /dev/block/platform/msm_sdcc.1/by-name/cache /cache
+
+    wait /dev/block/platform/msm_sdcc.1/by-name/persist
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/persist /persist nosuid nodev barrier=1
 
 on post-fs
 # Enable Cifs module
@@ -137,6 +168,7 @@ on post-fs
     chmod 755 /system/etc/init.qcom.sdio.sh
     chmod 755 /system/bin/qcamerasrvwrapper.sh
 
+    # Mount PDS
     wait /dev/block/platform/msm_sdcc.1/by-name/pds
     exec /system/bin/mount_pds.sh
 

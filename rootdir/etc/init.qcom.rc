@@ -157,8 +157,8 @@ on post-fs
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0775 media_rw media_rw
-    chown media_rw media_rw /data/media
+    mkdir /data/media 0770 root sdcard_rw
+    chown root sdcard_rw /data/media
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 

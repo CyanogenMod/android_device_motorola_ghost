@@ -12,6 +12,7 @@ bin/hardware_revisions.sh
 bin/ks
 bin/moto_com.sh
 bin/moto_com_post.sh
+bin/mount_ext4.sh
 bin/mpdecision
 bin/msp430
 bin/qcks
