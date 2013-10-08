@@ -39,7 +39,7 @@ on init
     mkdir /storage/emulated 0555 root root
 
     #External storage directories
-#   mkdir /storage/emulated/legacy 0555 root root
+    mkdir /storage/emulated/legacy 0555 root root
     mkdir /storage/sdcard1 0000 system system
     mkdir /storage/usbdisk 0755 system system
 
@@ -488,9 +488,9 @@ on property:ro.fuse_sdcard=true
     start sdcard
 
 # Binding fuse mount point to /storage/emulated/legacy
-#on property:init.svc.sdcard=running
-#    wait /mnt/shell/emulated/0
-#    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+on property:init.svc.sdcard=running
+    wait /mnt/shell/emulated/0
+    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
 
 # This will make sure that sdcard service starts as late_start.
 on nonencrypted
