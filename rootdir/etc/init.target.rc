@@ -175,6 +175,11 @@ on post-fs
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro remount
 
 on boot
+   # setup trace dir
+   mkdir /cache/trace 0777 root shell
+   chown root shell /cache/trace
+   chmod 0777 /cache/trace
+
    mount debugfs /sys/kernel/debug /sys/kernel/debug
    chown system system /sys/kernel/debug
    chmod 0770 /sys/kernel/debug
@@ -613,26 +618,6 @@ service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh
     user root
     oneshot
     disabled
-
-on property:ro.bind_sdcard=true
-    mount none /data/media /mnt/shell/emulated bind
-    wait /mnt/shell/emulated/0
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
-
-# This will make sure that sdcard is bound as late_start.
-on nonencrypted
-    setprop ro.bind_sdcard ${persist.bind_sdcard}
-
-on property:vold.decrypt=trigger_restart_framework
-    setprop ro.bind_sdcard ${persist.bind_sdcard}
-
-on property:installd.post_fs_data_ready=1
-    # Migration script for sdcard emulation in the kernel
-    exec /system/bin/defuse
-
-    # Make sure the root of sdcard emulation has the right xattr.
-    exec /system/bin/setfattr -n system.advise -v 0x30 /data/media
-
 
 # Disable BAM Adaptive Timer when Tethering is on.
 on property:net.tethering.on=1

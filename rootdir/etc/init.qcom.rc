@@ -29,6 +29,8 @@ import init.qcom.usb.rc
 # import init.target.rc
 
 on init
+    loglevel 8
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     # See storage config details at http://source.android.com/tech/storage/
@@ -37,7 +39,7 @@ on init
     mkdir /storage/emulated 0555 root root
 
     #External storage directories
-    mkdir /storage/emulated/legacy 0555 root root
+#   mkdir /storage/emulated/legacy 0555 root root
     mkdir /storage/sdcard1 0000 system system
     mkdir /storage/usbdisk 0755 system system
 
@@ -157,8 +159,8 @@ on post-fs
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0770 root sdcard_rw
-    chown root sdcard_rw /data/media
+    mkdir /data/media 0775 media_rw media_rw
+    chown media_rw media_rw /data/media
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
@@ -467,6 +469,27 @@ service ril-daemon1 /system/bin/rild -c 1
     disabled
     group radio cache inet misc audio sdcard_rw qcom_oncrpc diag qcom_diag log
 
+# daemon will drop to user/group system/media_rw after initializing
+# underlying files in /data/media will be created with user and group media_rw (1023)
+service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+    class late_start
+    disabled
+
+on property:ro.fuse_sdcard=true
+    start sdcard
+
+# Binding fuse mount point to /storage/emulated/legacy
+#on property:init.svc.sdcard=running
+#    wait /mnt/shell/emulated/0
+#    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+
+# This will make sure that sdcard service starts as late_start.
+on nonencrypted
+    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
+
+on property:vold.decrypt=trigger_restart_framework
+    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
+
 service hcidump /system/bin/sh /system/etc/hcidump.sh
     user bluetooth
     group bluetooth system net_bt_admin net_admin
@@ -479,5 +502,3 @@ on property:persist.sys.ssr.restart_level=1
 on property:persist.sys.ssr.restart_level=3
     write /sys/module/subsystem_restart/parameters/restart_level 3
 
-service syspart_fixup /system/bin/sh /init.qcom.syspart_fixup.sh
-    oneshot
