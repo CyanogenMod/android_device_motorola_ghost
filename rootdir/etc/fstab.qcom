@@ -20,4 +20,4 @@
 /dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm             emmc    defaults    recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot           emmc    defaults    recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/logo         /logo            emmc    defaults    recoveryonly
-#/devices/platform/msm_hsusb_host                    /storage/usbdisk auto    defaults    voldmanaged=usbdisk:auto
+/devices/platform/msm_hsusb_host                    /storage/usbdisk auto    defaults    voldmanaged=usbdisk:auto

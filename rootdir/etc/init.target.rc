@@ -112,14 +112,6 @@ on fs
     wait /dev/block/platform/msm_sdcc.1/by-name/customize
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec
 
-    restorecon /persist
-    restorecon /persist/.bt_nv.bin
-    restorecon /persist/WCNSS_qcom_wlan_nv.bin
-    restorecon /persist/drm/widevine
-    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_
-    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_/RXFABDUxyT6Q+Zwx9ZhPGOq2Bq8_
-    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_/Y4Nj+fDlt0uaX0xnzOj1AjymTvQ_
-
     chown radio radio /dev/mot_hob_ram
     chmod 0660 /dev/mot_hob_ram
 
@@ -154,6 +146,14 @@ on fs
 
     wait /dev/block/platform/msm_sdcc.1/by-name/persist
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/persist /persist nosuid nodev barrier=1
+
+    restorecon /persist
+    restorecon /persist/.bt_nv.bin
+    restorecon /persist/WCNSS_qcom_wlan_nv.bin
+    restorecon /persist/drm/widevine
+    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_
+    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_/RXFABDUxyT6Q+Zwx9ZhPGOq2Bq8_
+    restorecon /persist/drm/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_/Y4Nj+fDlt0uaX0xnzOj1AjymTvQ_
 
 on post-fs
 # Enable Cifs module

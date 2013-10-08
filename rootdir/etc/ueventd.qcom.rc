@@ -197,6 +197,9 @@
 /dev/qseecom              0660   system     mot_tpapi
 /dev/sec                  0660   system     mot_tpapi
 
+# HOB and DHOB partition permission
+/dev/block/mmcblk0p20     0660   root       radio
+/dev/block/mmcblk0p21     0660   root       radio
 
 # From moto ueventd.rc
 /dev/assd                 0660   smartcard  smartcard

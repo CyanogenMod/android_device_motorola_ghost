@@ -44,11 +44,10 @@ on init
     mkdir /storage/usbdisk 0755 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/sdcard1
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
 
-    # for backwards compatibility
+    # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
@@ -192,7 +191,6 @@ on post-fs-data
 
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
-    rm /data/system/wpa_supplicant
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
     #Create directories for gpsone_daemon services
@@ -257,6 +255,11 @@ on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start config_bluetooth
 
+service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
+    class main
+    user root
+    oneshot
+
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
@@ -313,7 +316,7 @@ on property:ro.use_data_netmgrd=false
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     class late_start
@@ -433,6 +436,12 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
+service atfwd /system/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    onrestart exec /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
+
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     class late_start
     user root
@@ -459,7 +468,7 @@ on property:persist.data.ds_fmc_app.mode=1
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 service ril-daemon1 /system/bin/rild -c 1
     class main
