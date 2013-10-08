@@ -3,22 +3,21 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 #<src>                                              <mnt_point>      <type>  <mnt_flags and options>                                                              <fs_mgr_flags>
 
-/dev/block/platform/msm_sdcc.1/by-name/userdata     /data            f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,errors=recover,android_emu=0:1015:0664:nocase    wait,encryptable=footer
-/dev/block/platform/msm_sdcc.1/by-name/system       /system          ext4    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/fsg          /fsg             emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/customize    /customize       emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/modem        /firmware        emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/cache        /cache           emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/persist      /persist         emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/boot         /boot            emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery        emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/misc         /misc            emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/modem        /modem           emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1            emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/sbl2         /sbl2            emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/sbl3         /sbl3            emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/tz           /tz              emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm             emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot           emmc    defaults                                                                             defaults
-/dev/block/platform/msm_sdcc.1/by-name/logo         /logo            emmc    defaults                                                                             defaults
-/devices/platform/msm_hsusb_host                    /storage/usbdisk auto    defaults                                                                             voldmanaged=usbdisk:auto
+/dev/block/platform/msm_sdcc.1/by-name/userdata     /data            f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,errors=recover,android_emu=0:1023:0664:nocase    wait,encryptable=footer
+/dev/block/platform/msm_sdcc.1/by-name/cache        /cache           ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/system       /system          ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/fsg          /fsg             ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/modem        /firmware        ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/persist      /persist         ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/boot         /boot            emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery        emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/modem        /modem           ext4    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/misc         /misc            emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1            emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/sbl2         /sbl2            emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/sbl3         /sbl3            emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/tz           /tz              emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm             emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot           emmc    defaults    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/logo         /logo            emmc    defaults    recoveryonly
+#/devices/platform/msm_hsusb_host                    /storage/usbdisk auto    defaults    voldmanaged=usbdisk:auto
