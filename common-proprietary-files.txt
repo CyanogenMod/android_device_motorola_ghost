@@ -29,6 +29,7 @@ bin/thermald
 # HAL
 lib/hw/audio.motvr.msm8960.so
 lib/hw/camera.msm8960.so
+lib/hw/gps.default.so
 lib/hw/nfc.MSM8960.so
 lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
@@ -52,6 +53,7 @@ lib/libdsucsd.so
 lib/libdsutils.so
 lib/libDxHdcp.so
 lib/libgemini.so
+lib/libgps.utils.so
 lib/libI420colorconvert.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
