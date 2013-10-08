@@ -54,7 +54,10 @@ lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
+lib/libloc_adapter.so
 lib/libloc_api_v02.so
+lib/libloc_eng.so
+lib/libloc_ext.so
 lib/libmdmcutback.so
 lib/libmercury.so
 lib/libmm-color-convertor.so
@@ -121,6 +124,7 @@ lib/libchromatix_ov10820_zsl.so
 lib/libchromatix_s5k5b3g_default_video.so
 lib/libchromatix_s5k5b3g_preview.so
 lib/libchromatix_s5k5b3g_zsl.so
+lib/libVdlFaceDetection.so
 
 # Etc
 etc/firmware/aonvr1.bin
