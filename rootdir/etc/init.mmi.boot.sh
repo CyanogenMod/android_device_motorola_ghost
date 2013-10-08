@@ -41,7 +41,7 @@ unset cust_md5
 pds_fti=/pds/factory/fti
 set -A fti_pds $(hd $pds_fti 2>/dev/null)
 if [ $? -eq 0 ]; then
-	set -A fti $(hd $pfs_fti 2>/dev/null)
+	set -A fti $(hd $pds_fti 2>/dev/null)
 fi
 
 # If UTAG_FTI is readable, compare checksums
@@ -90,7 +90,7 @@ unset fti y m d year month day utag_fti pds_fti fti_utag mdate
 product=$(getprop ro.hw.device)
 model=$(cat /proc/config/model/ascii 2>/dev/null)
 if [ $? -eq 0 ]; then
-	if [ "${model#*_}" == "$product" -o "${model%_*}" == "$product" ]; then
+	if [ "${model##*_}" == "$product" -o "${model%%_*}" == "$product" ]; then
 		echo "Clearing stale model value"
 		echo "" > /proc/config/model/raw
 	fi
