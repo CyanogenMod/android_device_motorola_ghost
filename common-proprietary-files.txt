@@ -27,6 +27,7 @@ bin/thermald
 # HAL
 lib/hw/audio.motvr.msm8960.so
 lib/hw/camera.msm8960.so
+lib/hw/nfc.MSM8960.so
 lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
 
@@ -68,6 +69,8 @@ lib/libmmrtpencoder.so
 lib/libmmstillomx.so
 lib/libmotext_inf.so
 lib/libmot_sensorlistener.so
+lib/libnfcpn544c3_fw.so
+lib/libpn544_fw.so
 lib/libqcci_legacy.so
 lib/libqdi.so
 lib/libqdp.so
