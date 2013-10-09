@@ -2,10 +2,8 @@
 bin/adspd
 bin/ap_gain.bin
 bin/ap_gain_mmul.bin
-bin/ATFWD-daemon
 bin/bootmodem
 bin/charge_only_mode
-bin/defuse
 bin/diag_klog
 bin/diag_mdlog
 bin/efsks

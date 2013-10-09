@@ -436,12 +436,6 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-    onrestart exec /system/bin/log -t RIL-ATFWD -p w "ATFWD daemon restarted"
-
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     class late_start
     user root
