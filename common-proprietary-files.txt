@@ -73,7 +73,6 @@ lib/libmmrtpencoder.so
 lib/libmmstillomx.so
 lib/libmotext_inf.so
 lib/libmot_sensorlistener.so
-lib/libnfcpn544c3_fw.so
 lib/libpn544_fw.so
 lib/libqcci_legacy.so
 lib/libqdi.so
