@@ -106,7 +106,7 @@ on fs
 
     # Mount modem FSG partition
     wait /dev/block/platform/msm_sdcc.1/by-name/fsg
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0 context=u:object_r:radio_efs_file:s0
 
     #Mount customize partion
     wait /dev/block/platform/msm_sdcc.1/by-name/customize
@@ -129,7 +129,7 @@ on fs
     # to speed up modem initialization
     wait /dev/block/platform/msm_sdcc.1/by-name/modem
     exec /system/bin/resize2fs /dev/block/platform/msm_sdcc.1/by-name/modem
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0 context=u:object_r:radio_efs_file:s0
     start bootmodem
 
     # Mount userdata -- userdata must in fstab.<ro.hardware> in order to
