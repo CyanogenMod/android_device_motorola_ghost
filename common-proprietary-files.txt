@@ -2,6 +2,7 @@
 bin/adspd
 bin/ap_gain.bin
 bin/ap_gain_mmul.bin
+bin/batt_health
 bin/bootmodem
 bin/charge_only_mode
 bin/diag_klog
