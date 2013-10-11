@@ -39,7 +39,6 @@ on init
     mkdir /storage/emulated 0555 root root
 
     #External storage directories
-    mkdir /storage/sdcard1 0000 system system
     mkdir /storage/usbdisk 0755 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
