@@ -267,7 +267,7 @@ service rmt_storage /system/bin/rmt_storage
 on property:ro.boot.emmc=true
     start rmt_storage
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
+service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh
     class core
     user root
     seclabel u:r:bluetooth_loader:s0
