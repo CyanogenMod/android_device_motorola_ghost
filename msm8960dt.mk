@@ -68,9 +68,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8960
+
 # Gps/location secuity configuration file
 PRODUCT_COPY_FILES += \
-    device/motorola/msm8960dt-common/config/gps.conf:system/etc/gps.conf \
+    device/motorola/msm8960dt-common/gps/gps.conf:system/etc/gps.conf \
     device/motorola/msm8960dt-common/config/sec_config:system/etc/sec_config
 
 # Media config

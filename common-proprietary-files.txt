@@ -32,7 +32,6 @@ lib/hw/audio.motvr.msm8960.so
 lib/hw/audio.primary.msm8960.so
 lib/hw/audio_policy.msm8960.so
 lib/hw/camera.msm8960.so
-lib/hw/gps.default.so
 lib/hw/nfc.MSM8960.so
 lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
@@ -60,16 +59,12 @@ lib/libdsucsd.so
 lib/libdsutils.so
 lib/libDxHdcp.so
 lib/libgemini.so
-lib/libgps.utils.so
 lib/libI420colorconvert.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
-lib/libloc_adapter.so
 lib/libloc_api_v02.so
-lib/libloc_eng.so
-lib/libloc_ext.so
 lib/libmdmcutback.so
 lib/libmercury.so
 lib/libmm-color-convertor.so
@@ -91,13 +86,11 @@ lib/libqmi_common_so.so
 lib/libqmi_csi.so
 lib/libqmi_csvt_srvc.so
 lib/libqmi_encdec.so
-lib/libquipc_os_api.so
 lib/libreference-ril.so
 lib/libril.so
 lib/libril-qcril-hook-oem.so
 lib/libsrsprocessing.so
 lib/libsurround_proc.so
-lib/libulp2.so
 
 # Camera
 bin/mm-qcamera-app
