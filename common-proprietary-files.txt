@@ -29,6 +29,8 @@ bin/thermald
 
 # HAL
 lib/hw/audio.motvr.msm8960.so
+lib/hw/audio.primary.msm8960.so
+lib/hw/audio_policy.msm8960.so
 lib/hw/camera.msm8960.so
 lib/hw/gps.default.so
 lib/hw/nfc.MSM8960.so
@@ -36,13 +38,17 @@ lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
 
 # Libs
+lib/soundfx/libmmieffectswrapper.so
 lib/libacdbloader.so
 lib/libadropbox.so
 lib/libadspd.so
 lib/libadspd-jni.so
 lib/libadsprpc.so
+lib/libalsa-intf.so
 lib/libaudcal.so
 lib/libaudioalsa.so
+lib/libaudioflinger.so
+lib/libaudioparameter.so
 lib/libbabysit.so
 lib/libconfigdb.so
 lib/libcsd-client.so
@@ -89,6 +95,8 @@ lib/libquipc_os_api.so
 lib/libreference-ril.so
 lib/libril.so
 lib/libril-qcril-hook-oem.so
+lib/libsrsprocessing.so
+lib/libsurround_proc.so
 lib/libulp2.so
 
 # Camera
@@ -169,6 +177,14 @@ etc/firmware/tfa9890_n1c2.patch
 etc/firmware/tfa9890_ringtone_table.preset
 etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
+etc/surround_sound/filter1i.pcm
+etc/surround_sound/filter1r.pcm
+etc/surround_sound/filter2i.pcm
+etc/surround_sound/filter2r.pcm
+etc/surround_sound/filter3i.pcm
+etc/surround_sound/filter3r.pcm
+etc/surround_sound/filter4i.pcm
+etc/surround_sound/filter4r.pcm
 etc/DxHDCP.cfg
 etc/hdcp_8960.dat.enc
 etc/sap.conf
