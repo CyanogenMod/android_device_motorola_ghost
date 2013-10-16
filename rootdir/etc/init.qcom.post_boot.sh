@@ -124,6 +124,17 @@ case "$target" in
          echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
          echo 384000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
          echo 384000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+         chown system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+         chown system /sys/devices/system/cpu/cpufreq/interactive/boost
+         chown system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+         chown system /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+         chown system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+         chown system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+         chown system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+         chown system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+         chown system /sys/devices/system/cpu/cpufreq/interactive/target_loads
+         chown system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+         chown system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
          chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
          chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
          chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
@@ -260,7 +271,7 @@ case "$target" in
         echo 50000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
         echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
         echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
-        echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+        echo 2 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
         echo 10 > /sys/devices/system/cpu/cpufreq/ondemand/down_differential
         echo 300000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
         echo 300000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
@@ -374,4 +385,4 @@ esac
 #fastrpc permission setting
 insmod /system/lib/modules/adsprpc.ko
 chown system.system /dev/adsprpc-smd
-chmod 660 /dev/adsprpc-smd
+chmod 666 /dev/adsprpc-smd
