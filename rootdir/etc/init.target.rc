@@ -208,7 +208,7 @@ on boot
    chown system system /sys/class/leds/charging/brightness
    chown system system /sys/class/leds/button-backlight/brightness
 
-	# Torch
+    # Torch
     chown system system /sys/class/leds/torch-flash/flash_light
     chmod 0666 /sys/class/leds/torch-flash/flash_light
 			
@@ -326,7 +326,8 @@ on boot
    chown audio audio /sys/devices/platform/c55_ctrl/gpio_c55_int/value
    chown audio audio /sys/devices/platform/c55_ctrl/gpio_core/value
    chown audio audio /sys/devices/platform/c55_ctrl/gpio_reset/value
-   mkdir /data/adspd/ 0770 audio diag
+   mkdir /data/adspd/ 0770 audio audio
+   mkdir /data/adspd/1 0770 audio audio
 
    # MSP430 driver parameter permissions
    chown mot_tcmd mot_tcmd /sys/module/msp430/parameters/irq_disable
@@ -371,7 +372,7 @@ on post-fs-data
    mkdir /data/adam 0750 radio log
 
    # Setup correct permissions for /pds/public
-    mkdir /pds/public/atvc 0770 system shell
+    mkdir /pds/public/atvc 0770 mot_atvc shell
     chmod 0770 /pds/public/atvc
     mkdir /data/local/dbvc 0750 system shell
     mkdir /data/local/atvc 0775 system shell
@@ -618,6 +619,28 @@ service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh
     user root
     oneshot
     disabled
+
+on boot
+
+on property:ro.bind_sdcard=true
+    mount none /data/media /mnt/shell/emulated bind
+    wait /mnt/shell/emulated/0
+    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+
+# This will make sure that sdcard is bound as late_start.
+on nonencrypted
+    setprop ro.bind_sdcard ${persist.bind_sdcard}
+
+on property:vold.decrypt=trigger_restart_framework
+    setprop ro.bind_sdcard ${persist.bind_sdcard}
+
+on property:installd.post_fs_data_ready=1
+    # Migration script for sdcard emulation in the kernel
+    exec /system/bin/defuse
+
+    # Make sure the root of sdcard emulation has the right xattr.
+    exec /system/bin/setfattr -n system.advise -v 0x30 /data/media
+
 
 # Disable BAM Adaptive Timer when Tethering is on.
 on property:net.tethering.on=1

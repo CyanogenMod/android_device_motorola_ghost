@@ -5,6 +5,7 @@ bin/ap_gain_mmul.bin
 bin/batt_health
 bin/bootmodem
 bin/charge_only_mode
+bin/defuse
 bin/diag_klog
 bin/diag_mdlog
 bin/efsks

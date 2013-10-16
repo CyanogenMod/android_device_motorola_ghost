@@ -25,6 +25,8 @@
 
 LOCAL_PATH := device/motorola/msm8960dt-common
 
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
+
 BOARD_VENDOR := motorola-msm8960
 
 # Platform
