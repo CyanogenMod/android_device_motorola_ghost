@@ -29,6 +29,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wlan/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x1.bin:system/etc/firmware/wlan/prima/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x1.bin \
     $(LOCAL_PATH)/wlan/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x2.bin:system/etc/firmware/wlan/prima/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x2.bin
 
+PRODUCT_PACKAGES += \
+    hostapd_default.conf
+
 # Symlinks
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv_calibration.bin \
