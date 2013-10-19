@@ -168,6 +168,7 @@ on post-fs
     chmod 755 /system/etc/init.qcom.modem_links.sh
     chmod 755 /system/etc/init.qcom.post_boot.sh
     chmod 755 /system/etc/init.qcom.sdio.sh
+    chmod 755 /system/bin/moto_com.sh
     chmod 755 /system/bin/qcamerasrvwrapper.sh
 
     # Mount PDS
@@ -423,22 +424,7 @@ on post-fs-data
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_usb_suspend
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_fail_clear
     start batt_health
-    start moto-com
-    start thermald
-    exec /system/bin/charge_only_mode
-    start moto-com-post
-
-service moto-com /system/bin/sh /system/bin/moto_com.sh
-    class late_start
-    user root
-    oneshot
-    disabled
-
-service moto-com-post /system/bin/sh /system/bin/moto_com_post.sh
-    class late_start
-    user root
-    oneshot
-    disabled
+    exec /system/bin/sh /system/bin/moto_com.sh
 
 service ril-qmi /system/bin/sh /init.qcom.ril.sh
     class main

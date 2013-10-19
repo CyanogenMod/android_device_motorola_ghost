@@ -64,7 +64,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
-PRODUCT_PACKAGES += mkfs.f2fs_arm
+PRODUCT_PACKAGES += \
+    mkfs.f2fs_arm \
+    qcmediaplayer
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -102,7 +104,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-fma2dp=true \
     media.stagefright.enable-scan=true \
     mmp.enable.3g2=true \
-    media.aac_51_output_enabled=true
+    media.aac_51_output_enabled=true \
+    ro.mot.vr_source_dsp=1
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -113,10 +116,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.bpt=0x2e28 \
     ro.usb.bpt_adb=0x2e29 \
     ro.usb.bpteth=0x2e2a \
-    ro.usb.bpteth_adb= \
+    ro.usb.bpteth_adb=0x2e2b \
     ro.qc.sdk.camera.facialproc=true \
     ro.qc.sdk.gestures.camera=false \
-    ro.qc.sdk.sensors.gestures=true \
+    ro.qc.sdk.sensors.gestures=false \
     persist.gps.qmienabled=true \
     persist.bind_sdcard=true
 
