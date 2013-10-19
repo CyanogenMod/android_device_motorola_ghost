@@ -71,6 +71,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
 
+# EGL config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960
@@ -115,6 +119,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.sensors.gestures=true \
     persist.gps.qmienabled=true \
     persist.bind_sdcard=true
+
+# Opengles version 3
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196608
 
 # QCOM Display
 PRODUCT_PROPERTY_OVERRIDES += \
