@@ -591,12 +591,6 @@ service bootmodem /system/bin/bootmodem
     disabled
     oneshot
 
-service mbm_spy /system/bin/mbm_spy
-   class late_start
-   user system
-   group system
-   oneshot
-
 service mmi-boot-sh /system/bin/logwrapper /system/bin/sh /init.mmi.boot.sh
     class core
     user root
