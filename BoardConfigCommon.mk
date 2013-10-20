@@ -50,8 +50,12 @@ WLAN_MODULES:
 
 TARGET_KERNEL_MODULES += WLAN_MODULES
 
+# Flags
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
+
 # Graphics
 BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
+TARGET_USES_QCOM_BSP := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1055,xt1056,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon,ghost_retail,ghost,xt1080,obake_verizon,xt1080m,obake
