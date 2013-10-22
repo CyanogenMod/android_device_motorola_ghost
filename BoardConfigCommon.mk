@@ -58,7 +58,7 @@ BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
 TARGET_USES_QCOM_BSP := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1055,xt1056,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon,ghost_retail,ghost,xt1080,obake_verizon,xt1080m,obake
+TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon,xt1080,obake_verizon,xt1080m,obake
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom

@@ -23,7 +23,7 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(BOARD_VENDOR),motorola-msm8960)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-ifneq ($(filter xt1055 xt1056 xt1058 xt1060 xt1080 xt1080m,$(TARGET_DEVICE)),)
+ifneq ($(filter xt1053 xt1055 xt1056 xt1058 xt1060 xt1080 xt1080m,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
