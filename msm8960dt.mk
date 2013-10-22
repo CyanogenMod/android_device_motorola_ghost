@@ -127,7 +127,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QCOM Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
-
-# Telephony
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril.v3=qcomdsds
