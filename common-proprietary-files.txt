@@ -70,6 +70,7 @@ lib/libmercury.so
 lib/libmm-color-convertor.so
 lib/libmmjpeg.so
 lib/libmmjpeg_interface.so
+lib/libmmjps.so
 lib/libmmmpo.so
 lib/libmmmpod.so
 lib/libmmrtpencoder.so
@@ -95,6 +96,7 @@ lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 lib/libsensor1.so
 lib/libsensor_reg.so
+lib/libsensor_user_cal.so
 lib/libsrsprocessing.so
 lib/libsurround_proc.so
 vendor/lib/libdiag.so
@@ -189,9 +191,6 @@ lib/libVdlFaceDetection.so
 lib/VdlData.dat
 
 ## Adreno GPU
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a225_pfp.fw
-etc/firmware/a225_pm4.fw
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 etc/firmware/leia_pfp_470.fw
@@ -211,7 +210,6 @@ vendor/lib/libgsl.so
 vendor/lib/libllvm-a3xx.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
-vendor/lib/libsc-a2xx.so
 vendor/lib/libsc-a3xx.so
 
 # Etc
