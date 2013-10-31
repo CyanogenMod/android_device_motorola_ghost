@@ -58,6 +58,7 @@ lib/libdss.so
 lib/libdsucsd.so
 lib/libdsutils.so
 lib/libDxHdcp.so
+lib/libFileMux.so
 lib/libgemini.so
 lib/libI420colorconvert.so
 lib/libidl.so
@@ -67,6 +68,8 @@ lib/libimage-omx-common.so
 lib/libloc_api_v02.so
 lib/libmdmcutback.so
 lib/libmercury.so
+lib/libmm-abl.so
+lib/libmm-abl-oem.so
 lib/libmm-color-convertor.so
 lib/libmmjpeg.so
 lib/libmmjpeg_interface.so
@@ -78,6 +81,12 @@ lib/libmmstillomx.so
 lib/libmotext_inf.so
 lib/libmot_sensorlistener.so
 lib/libnetmgr.so
+lib/libOmxAacDec.so
+lib/libOmxAmrwbplusDec.so
+lib/libOmxEvrcDec.so
+lib/libOmxMux.so
+lib/libOmxQcelp13Dec.so
+lib/libOmxWmaDec.so
 lib/libpn544_fw.so
 lib/libqcci_legacy.so
 lib/libqdi.so
@@ -115,6 +124,7 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
 
 # Camera
+bin/mm-pp-daemon
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 bin/v4l2-qcamera-app
@@ -188,6 +198,7 @@ lib/libchromatix_s5k5b3g_zsl.so
 lib/libchromatix_vx6953_default_video.so
 lib/libchromatix_vx6953_preview.so
 lib/libVdlFaceDetection.so
+lib/pp_proc_plugin.so
 lib/VdlData.dat
 
 ## Adreno GPU

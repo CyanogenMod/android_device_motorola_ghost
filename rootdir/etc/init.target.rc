@@ -169,7 +169,6 @@ on post-fs
     chmod 755 /system/etc/init.qcom.post_boot.sh
     chmod 755 /system/etc/init.qcom.sdio.sh
     chmod 755 /system/bin/moto_com.sh
-    chmod 755 /system/bin/qcamerasrvwrapper.sh
 
     # Mount PDS
     wait /dev/block/platform/msm_sdcc.1/by-name/pds
@@ -432,10 +431,10 @@ service ril-qmi /system/bin/sh /init.qcom.ril.sh
     oneshot
 
 #start camera server as daemon
-service qcamerasvr /system/bin/logwrapper /system/bin/qcamerasrvwrapper.sh
-    class late_start
-    user camera
-    group camera system inet input graphics net_bt_stack
+service qcamerasvr /system/bin/mm-qcamera-daemon
+        class core
+        user camera
+        group camera system inet input graphics net_bt_stack
 
 #start Sensor daemon
 service msp430 /system/bin/msp430 boot
