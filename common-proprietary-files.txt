@@ -79,6 +79,7 @@ lib/libOmxAmrwbplusDec.so
 lib/libOmxEvrcDec.so
 lib/libOmxMux.so
 lib/libOmxQcelp13Dec.so
+lib/libOmxVenc.so
 lib/libOmxWmaDec.so
 lib/libpn544_fw.so
 lib/libqcci_legacy.so
