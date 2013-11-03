@@ -193,7 +193,6 @@
 /dev/i2c-10               0660   root       system
 /dev/i2c-12               0660   root       system
 /dev/tzcom                0660   system     drmrpc
-/dev/qseecom              0660   system     drmrpc
 /dev/qce                  0660   system     drmrpc
 /dev/sec                  0660   system     drmrpc
 
@@ -213,7 +212,6 @@
 /dev/drv2605              0660   system     system
 
 # Security
-/dev/qseecom              0660   system     mot_tpapi
 /dev/sec                  0660   system     mot_tpapi
 
 # HOB and DHOB partition permission
