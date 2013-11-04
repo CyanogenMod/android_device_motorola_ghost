@@ -26,6 +26,7 @@
 #
 
 import init.qcom.usb.rc
+import init.ril.rc
 # import init.target.rc
 
 on init
@@ -239,11 +240,6 @@ on property:bluetooth.isEnabled=true
 
 service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
-    user root
-    oneshot
-
-service qcom-c_main-sh /system/bin/sh /init.qcom.class_main.sh
-    class main
     user root
     oneshot
 

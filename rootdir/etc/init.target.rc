@@ -425,11 +425,6 @@ on post-fs-data
     start batt_health
     exec /system/bin/sh /system/bin/moto_com.sh
 
-service ril-qmi /system/bin/sh /init.qcom.ril.sh
-    class main
-    user root
-    oneshot
-
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
         class core
