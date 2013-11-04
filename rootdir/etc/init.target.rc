@@ -578,6 +578,11 @@ service dhcpcd_eth0 /system/bin/dhcpcd -G
     disabled
     oneshot
 
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
+   group root
+
 service iprenew_eth0 /system/bin/dhcpcd -nBK
     class late_start
     disabled
