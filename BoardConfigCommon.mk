@@ -32,7 +32,6 @@ BOARD_VENDOR := motorola-msm8960
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
 TARGET_QCOM_MEDIA_VARIANT := caf
-TARGET_ADDITIONAL_BOOTCLASSPATH := qcmediaplayer
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8960dt-common
