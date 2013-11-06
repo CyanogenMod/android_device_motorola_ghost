@@ -36,7 +36,7 @@ on init
     mkdir /persist 0771 system system
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0550 system sdcard_r
+    mkdir /storage 0555 system sdcard_r
     mkdir /storage/emulated 0555 root root
 
     #External storage directories
@@ -158,8 +158,8 @@ on post-fs
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0770 root sdcard_rw
-    chown root sdcard_rw /data/media
+    mkdir /data/media 0770 media_rw media_rw
+    chown media_rw media_rw /data/media
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
@@ -244,6 +244,7 @@ service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
+    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
     start qcom-c_main-sh
     start config_bluetooth
 
@@ -473,11 +474,21 @@ service ril-daemon1 /system/bin/rild -c 1
     disabled
     group radio cache inet misc audio sdcard_r sdcard_rw qcom_oncrpc diag qcom_diag log
 
-service hcidump /system/bin/sh /system/etc/hcidump.sh
-    user bluetooth
-    group bluetooth system net_bt_admin net_admin
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
+    class late_start
     disabled
-    oneshot
+
+on property:ro.fuse_sdcard=true
+    start sdcard
+
+# Binding fuse mount point to /storage/emulated/legacy
+on property:init.svc.sdcard=running
+    wait /mnt/shell/emulated/0 600
+    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+
+# This will make sure that sdcard service starts as late_start.
+on nonencrypted
+    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
 
 
 #Disable boot timeout for external modems.

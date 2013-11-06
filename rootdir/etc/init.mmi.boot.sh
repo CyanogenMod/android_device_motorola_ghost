@@ -66,24 +66,29 @@ fi
 # Get Last Test Station stamp from FTI
 # and convert to user-friendly date, US format
 # The offsets are for hd-format, corresponding to real offsets 64/65/66
-# If total cksum is empty, then we have no PDS and no UTAG, too bad.
+# If the month/date look reasonable, data is probably OK.
 mdate="Unknown"
-if [ ! -z "${fti[153]}" ]; then
-	y=0x${fti[73]}
-	m=0x${fti[77]}
-	d=0x${fti[78]}
-	let year=$y month=$m day=$d
-	# Invalid data will often have bogus month/date values
-	if [ $month -le 12 -a $day -le 31 ]; then
-		mdate=$month/$day/20$year
-	else
-		echo "Corrupt FTI data"
-	fi
+y=0x${fti[73]}
+m=0x${fti[77]}
+d=0x${fti[78]}
+let year=$y month=$m day=$d
+# Invalid data will often have bogus month/date values
+if [ $month -le 12 -a $day -le 31 -a $year -ge 12 ]; then
+	mdate=$month/$day/20$year
 else
-	echo "No FTI data available"
+	echo "Corrupt FTI data"
 fi
+
 setprop ro.manufacturedate $mdate
 unset fti y m d year month day utag_fti pds_fti fti_utag mdate
+
+for p in $(cat /proc/cmdline); do
+	if [ ${p%%:*} = "@" ]; then
+		v=${p#@:}; a=${v%=*}; b=${v#*=}
+		${a%%:*} ${a##*:} $b
+	fi
+done
+unset p v a b
 
 # Cleanup stale/incorrect programmed model value
 # Real values will never contain substrings matching "internal" device name

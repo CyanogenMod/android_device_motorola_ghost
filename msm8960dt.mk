@@ -121,7 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.gestures.camera=false \
     ro.qc.sdk.sensors.gestures=false \
     persist.gps.qmienabled=true \
-    persist.bind_sdcard=true
+    persist.fuse_sdcard=true \
+    ro.crypto.fuse_sdcard=true
 
 # Opengles version 3
 PRODUCT_PROPERTY_OVERRIDES += \

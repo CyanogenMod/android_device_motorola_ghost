@@ -59,7 +59,7 @@
 /dev/smd4                 0660   system     system
 /dev/smd_cxm_qmi          0640   radio      radio
 /dev/smd7                 0660   bluetooth  bluetooth
-/dev/radio0               0640   fm_radio   fm_radio
+/dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
 /dev/gss                  0660   gps        gps
 /dev/smdcntl0             0640   radio      radio
@@ -165,7 +165,6 @@
 /dev/sdio_tty_ciq_00      0660   system     system
 /dev/tty_sdio_00          0660   system     system
 /dev/ttyGS0               0660   system     system
-/dev/i2c-5                0660   media       media
 
 # DVB devices
 /dev/dvb/adapter0/demux*  0444   media       media
@@ -177,24 +176,22 @@
 /sys/devices/i2c-12/12-*  enable  0664 system system
 /sys/devices/i2c-12/12-*  poll_delay 0664 system system
 
-/dev/coredump_modem       0664   radio      radio
-/dev/ramdump_modem_fw     0664   radio      radio
-/dev/ramdump_modem_sw     0664   radio      radio
-/dev/ramdump_smem         0664   radio      radio
-/dev/ramdump_riva         0664   radio      radio
-/dev/coredump_riva        0664   radio      radio
+# wlan
+/dev/wcnss_wlan           0660   system     system
+
+/dev/coredump_modem       0660   radio      radio
+/dev/ramdump_modem_fw     0660   radio      radio
+/dev/ramdump_modem_sw     0660   radio      radio
+/dev/ramdump_smem         0660   radio      radio
+/dev/ramdump_riva         0660   radio      radio
 
 /dev/pmem_audio           0660   system     audio
 /dev/msm_acdb             0660   system     audio
 /dev/radio0               0644   fm_radio   fm_radio
-/dev/i2c-0                0664   root       system
-/dev/i2c-1                0664   root       system
-/dev/i2c-2                0664   root       system
-/dev/i2c-3                0664   root       system
-/dev/i2c-4                0664   root       camera
-/dev/i2c-8                0664   root       system
-/dev/i2c-10               0664   root       system
-/dev/i2c-12               0664   root       system
+/dev/i2c-3                0660   root       system
+/dev/i2c-4                0660   root       camera
+/dev/i2c-10               0660   root       system
+/dev/i2c-12               0660   root       system
 /dev/tzcom                0660   system     drmrpc
 /dev/qseecom              0660   system     drmrpc
 /dev/qce                  0660   system     drmrpc

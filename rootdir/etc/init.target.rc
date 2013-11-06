@@ -120,14 +120,14 @@ on fs
     chmod 0660 /dev/mot_hob_ram
 
     # Set correct permissions for HOB, DHOB, CID Partitions and CLOGO Partitions
-    exec /system/bin/chmod 660 /dev/block/platform/msm_sdcc.1/by-name/hob
-    exec /system/bin/chmod 660 /dev/block/platform/msm_sdcc.1/by-name/dhob
-    exec /system/bin/chmod 660 /dev/block/platform/msm_sdcc.1/by-name/cid
-    exec /system/bin/chmod 660 /dev/block/platform/msm_sdcc.1/by-name/clogo
-    exec /system/bin/chown root:radio /dev/block/platform/msm_sdcc.1/by-name/hob
-    exec /system/bin/chown root:radio /dev/block/platform/msm_sdcc.1/by-name/dhob
-    exec /system/bin/chown root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
-    exec /system/bin/chown root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/hob
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/dhob
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/cid
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/clogo
+    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/hob
+    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/dhob
+    exec /system/bin/chown -L root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
+    exec /system/bin/chown -L root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
 
     # Mount modem immediately after system and trigger modem boot
     # to speed up modem initialization
@@ -162,6 +162,7 @@ on fs
 on post-fs
 # Enable Cifs module
     insmod /system/lib/modules/cifs.ko
+    restorecon /data/media /data/media/0 /data/media/legacy /data/media/obb
     chmod 755 /system/etc/init.crda.sh
     chmod 755 /system/etc/init.qcom.bt.sh
     chmod 755 /system/etc/init.qcom.coex.sh
@@ -195,7 +196,6 @@ on boot
    copy /proc/last_kmsg /data/dontpanic/last_kmsg
    chown root log /data/dontpanic/last_kmsg
    chmod 0640 /data/dontpanic/last_kmsg
-
    write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
    write /sys/devices/i2c-3/3-005b/update_fw 1
    start qcamerasvr
@@ -373,7 +373,7 @@ on post-fs-data
    mkdir /data/ss-ram-dumps/riva-dumps 0750 radio log
 
    # ad@m
-   mkdir /data/adam 0750 radio log
+   mkdir /data/adam 0750 radio diag
 
    # Setup correct permissions for /pds/public
     mkdir /pds/public/atvc 0770 mot_atvc shell
@@ -390,8 +390,8 @@ on post-fs-data
    mkdir /tombstones/mdm2 0771 system system
 
    # Set correct permissions for UTAGS
-   exec /system/bin/chown mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
-   exec /system/bin/chmod 0660 /dev/block/platform/msm_sdcc.1/by-name/utags
+   exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
+   exec /system/bin/chmod -L 0660 /dev/block/platform/msm_sdcc.1/by-name/utags
 
 # backup directory for omadm
     mkdir /pds/public/omadm 0700 radio radio
@@ -424,6 +424,8 @@ on post-fs-data
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_iusb
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_usb_suspend
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_fail_clear
+    chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_vinmin
+
     start batt_health
     exec /system/bin/sh /system/bin/moto_com.sh
 
@@ -604,26 +606,11 @@ service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh
     disabled
 
 on boot
-
-on property:ro.bind_sdcard=true
-    mount none /data/media /mnt/shell/emulated bind
-    wait /mnt/shell/emulated/0
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
-
-# This will make sure that sdcard is bound as late_start.
-on nonencrypted
-    setprop ro.bind_sdcard ${persist.bind_sdcard}
-
-on property:vold.decrypt=trigger_restart_framework
-    setprop ro.bind_sdcard ${persist.bind_sdcard}
+    start thermald
 
 on property:installd.post_fs_data_ready=1
     # Migration script for sdcard emulation in the kernel
-    exec /system/bin/defuse
-
-    # Make sure the root of sdcard emulation has the right xattr.
-    exec /system/bin/setfattr -n system.advise -v 0x30 /data/media
-
+    exec /system/bin/refuse
 
 # Disable BAM Adaptive Timer when Tethering is on.
 on property:net.tethering.on=1
