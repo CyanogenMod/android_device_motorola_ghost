@@ -65,7 +65,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     mkfs.f2fs_arm \
-    qcmediaplayer
+    qcmediaplayer \
+    keystore.msm8960
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
