@@ -36,16 +36,17 @@ on init
     mkdir /persist 0771 system system
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0555 system sdcard_r
     mkdir /storage/emulated 0555 root root
 
     #External storage directories
     mkdir /storage/emulated/legacy 0555 root root
-    mkdir /storage/usbdisk 0755 system system
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export SECONDARY_STORAGE /storage/usbdisk
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
@@ -53,6 +54,9 @@ on init
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
+
+on fs
+    setprop ro.crypto.fuse_sdcard true
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -153,8 +157,6 @@ on boot
     # overhead in the kernel. Turn it off.
     write /sys/block/mmcblk0/queue/add_random 0
 
-# import cne init file
-on post-fs
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -244,7 +246,6 @@ service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
-    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
     start qcom-c_main-sh
     start config_bluetooth
 
@@ -476,20 +477,15 @@ service ril-daemon1 /system/bin/rild -c 1
 
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
-    disabled
 
-on property:ro.fuse_sdcard=true
-    start sdcard
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023  -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 # Binding fuse mount point to /storage/emulated/legacy
 on property:init.svc.sdcard=running
     wait /mnt/shell/emulated/0 600
     mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
-
-# This will make sure that sdcard service starts as late_start.
-on nonencrypted
-    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
-
 
 #Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
