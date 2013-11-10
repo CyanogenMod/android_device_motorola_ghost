@@ -38,6 +38,8 @@
 <StorageList xmlns:android="http://schemas.android.com/apk/res/android">
     <storage android:storageDescription="@string/storage_internal"
         android:emulated="true"
+        android:primary="true"
+        android:removable="false"
         android:mtpReserve="100" />
 
     <!-- external USB drive -->
