@@ -61,5 +61,5 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP
-TW_BRIGHTNESS_PATH := /sys/devices/virtual/graphics/fb0/lcd-backlight/brightness
-TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 126
