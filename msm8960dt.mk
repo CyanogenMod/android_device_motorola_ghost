@@ -18,8 +18,6 @@ $(call inherit-product, device/motorola/qcom-common/qcom-common.mk)
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_BOOT_JARS += qcmediaplayer
-
 # Wifi
 PRODUCT_COPY_FILES += \
     kernel/motorola/msm8960dt-common/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -66,7 +64,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     mkfs.f2fs_arm \
-    qcmediaplayer \
     keystore.msm8960
 
 # Audio configuration

@@ -99,10 +99,6 @@ on property:ro.modem.no_wdog_chk=1
     # Create PDS mount point
     mkdir /pds 0755 root root
 
-#on init
-    # This is no longer supported from KK release.
-    #export BOOTCLASSPATH ${BOOTCLASSPATH}:/system/framework/qcmediaplayer.jar
-
 on fs
     # Mount system so that recover userdata is available
     wait /dev/block/platform/msm_sdcc.1/by-name/system
