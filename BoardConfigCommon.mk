@@ -21,16 +21,20 @@
 # definition file).
 #
 
+BOARD_VENDOR := motorola-qcom
+
+# Platform
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
+TARGET_BOARD_PLATFORM := msm8960
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+TARGET_CPU_VARIANT := krait
+
 -include device/motorola/qcom-common/BoardConfigCommon.mk
 
 LOCAL_PATH := device/motorola/msm8960dt-common
 
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
-BOARD_VENDOR := motorola-msm8960
-
-# Platform
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
 TARGET_QCOM_MEDIA_VARIANT := caf
 
 # Inline kernel building

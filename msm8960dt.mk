@@ -1,4 +1,4 @@
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,10 +13,48 @@
 # limitations under the License.
 
 LOCAL_PATH := device/motorola/msm8960dt-common
-$(call inherit-product, device/motorola/qcom-common/qcom-common.mk)
 
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio_policy.msm8960 \
+    audio.primary.msm8960
+
+# HAL
+PRODUCT_PACKAGES += \
+    copybit.msm8960 \
+    gralloc.msm8960 \
+    hwcomposer.msm8960 \
+    keystore.msm8960 \
+    lights.MSM8960 \
+    memtrack.msm8960 \
+    power.msm8960
+
+# Symlinks
+PRODUCT_PACKAGES += \
+    mbhc.bin \
+    wcd9310_anc.bin \
+    WCNSS_qcom_wlan_nv_calibration.bin \
+    WCNSS_qcom_wlan_nv_regulatory.bin \
+    WCNSS_qcom_wlan_nv_calibration_0x3.bin \
+    WCNSS_qcom_wlan_nv_calibration_0x4.bin \
+    WCNSS_qcom_wlan_nv_calibration_0x5.bin \
+    WCNSS_qcom_wlan_nv_calibration_0x6.bin \
+    WCNSS_qcom_wlan_nv_regulatory_0x3.bin \
+    WCNSS_qcom_wlan_nv_regulatory_0x4.bin \
+    WCNSS_qcom_wlan_nv_regulatory_0x5.bin \
+    WCNSS_qcom_wlan_nv_regulatory_0x6.bin
+
+# EGL config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
+
+# Gps/location secuity configuration file
+PRODUCT_COPY_FILES += \
+    device/motorola/msm8960dt-common/config/gps.conf:system/etc/gps.conf \
+    device/motorola/msm8960dt-common/config/sec_config:system/etc/sec_config
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -28,19 +66,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wlan/cal_files/WCNSS_qcom_wlan_nv_regulatory.bin:system/etc/firmware/wlan/prima/cal_files/WCNSS_qcom_wlan_nv_regulatory.bin \
     $(LOCAL_PATH)/wlan/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x1.bin:system/etc/firmware/wlan/prima/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x1.bin \
     $(LOCAL_PATH)/wlan/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x2.bin:system/etc/firmware/wlan/prima/cal_files/WCNSS_qcom_wlan_nv_regulatory_0x2.bin
-
-# Symlinks
-PRODUCT_PACKAGES += \
-    WCNSS_qcom_wlan_nv_calibration.bin \
-    WCNSS_qcom_wlan_nv_regulatory.bin \
-    WCNSS_qcom_wlan_nv_calibration_0x3.bin \
-    WCNSS_qcom_wlan_nv_calibration_0x4.bin \
-    WCNSS_qcom_wlan_nv_calibration_0x5.bin \
-    WCNSS_qcom_wlan_nv_calibration_0x6.bin \
-    WCNSS_qcom_wlan_nv_regulatory_0x3.bin \
-    WCNSS_qcom_wlan_nv_regulatory_0x4.bin \
-    WCNSS_qcom_wlan_nv_regulatory_0x5.bin \
-    WCNSS_qcom_wlan_nv_regulatory_0x6.bin
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -62,27 +87,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
-PRODUCT_PACKAGES += \
-    mkfs.f2fs_arm \
-    keystore.msm8960
-
 # Audio configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
-
-# EGL config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.msm8960
-
-# Gps/location secuity configuration file
-PRODUCT_COPY_FILES += \
-    device/motorola/msm8960dt-common/config/gps.conf:system/etc/gps.conf \
-    device/motorola/msm8960dt-common/config/sec_config:system/etc/sec_config
 
 # Media config
 PRODUCT_COPY_FILES += \
@@ -130,3 +138,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QCOM Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
+
+$(call inherit-product, device/motorola/qcom-common/qcom-common.mk)
