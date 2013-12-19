@@ -47,6 +47,12 @@ PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv_regulatory_0x5.bin \
     WCNSS_qcom_wlan_nv_regulatory_0x6.bin
 
+# Utilities
+PRODUCT_PACKAGES += \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
+
 # EGL config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
