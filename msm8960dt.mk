@@ -139,7 +139,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.sensors.gestures=false \
     persist.gps.qmienabled=true \
     persist.fuse_sdcard=true \
-    ro.crypto.fuse_sdcard=true
+    ro.crypto.fuse_sdcard=true \
+    ro.qc.sdk.audio.fluencetype=none
 
 # Opengles version 3
 PRODUCT_PROPERTY_OVERRIDES += \

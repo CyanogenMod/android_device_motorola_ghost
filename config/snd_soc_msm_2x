@@ -6,10 +6,12 @@ SectionVerb
 	Name "HiFi"
 
 	EnableSequence
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:1
 		'MI2S_RX Audio Mixer MultiMedia1':1:1
 	EndSequence
 
 	DisableSequence
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:0
 		'MI2S_RX Audio Mixer MultiMedia1':1:0
 	EndSequence
 
@@ -40,12 +42,12 @@ SectionVerb
 	Name "HiFiMI2S Speaker Headset"
 
 	EnableSequence
-		'MI2S_RX Audio Mixer MultiMedia1':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:1
 		'MI2S_RX Audio Mixer MultiMedia1':1:1
 	EndSequence
 
 	DisableSequence
-		'MI2S_RX Audio Mixer MultiMedia1':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:0
 		'MI2S_RX Audio Mixer MultiMedia1':1:0
 	EndSequence
 
@@ -236,10 +238,12 @@ SectionVerb
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -268,12 +272,12 @@ SectionVerb
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
-		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
-		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -627,11 +631,13 @@ SectionVerb
 	Name "Voice Call"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer CSVoice':1:0
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:0
 	EndSequence
@@ -649,9 +655,9 @@ SectionVerb
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer CSVoice':1:0
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -664,9 +670,9 @@ SectionVerb
 	Name "Voice CallMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -860,11 +866,13 @@ SectionVerb
 	Name "Voice Call IP"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer Voip':1:1
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:1
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer Voip':1:0
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:0
 	EndSequence
@@ -882,9 +890,9 @@ SectionVerb
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer Voip':1:0
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -898,9 +906,9 @@ SectionVerb
 	Name "Voice Call IPMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer Voip':1:1
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -1173,10 +1181,12 @@ SectionVerb
 	Name "HiFi Tunnel"
 
 	EnableSequence
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:1
 		'MI2S_RX Audio Mixer MultiMedia4':1:1
 	EndSequence
 
 	DisableSequence
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:0
 		'MI2S_RX Audio Mixer MultiMedia4':1:0
 	EndSequence
 
@@ -1659,11 +1669,13 @@ SectionVerb
 	Name "VoLTE"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer VoLTE':1:1
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:1
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer VoLTE':1:0
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:0
 	EndSequence
@@ -1681,9 +1693,9 @@ SectionVerb
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer VoLTE':1:0
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -1696,9 +1708,9 @@ SectionVerb
 	Name "VoLTEMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer VoLTE':1:1
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -1998,10 +2010,12 @@ SectionVerb
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia5':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia5':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2032,12 +2046,12 @@ SectionVerb
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia5':1:1
-		'MI2S_RX Audio Mixer MultiMedia5':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia5':1:0
-		'MI2S_RX Audio Mixer MultiMedia5':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2219,7 +2233,7 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
-		'EAR PA Gain':0:POS_6_DB
+		'EAR PA Gain':0:POS_2_DB
 		'DAC1 Switch':1:1
 		'RX1 Digital Volume':1:68
 	EndSequence
@@ -2244,7 +2258,7 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
-		'EAR PA Gain':0:POS_6_DB
+		'EAR PA Gain':0:POS_2_DB
 		'DAC1 Switch':1:1
 		'RX1 Digital Volume':1:68
 	EndSequence
@@ -2268,7 +2282,7 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
-		'EAR PA Gain':0:POS_6_DB
+		'EAR PA Gain':0:POS_2_DB
 		'DAC1 Switch':1:1
 		'RX1 Digital Volume':1:68
 	EndSequence
@@ -2291,7 +2305,7 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
-		'EAR PA Gain':0:POS_6_DB
+		'EAR PA Gain':0:POS_2_DB
 		'DAC1 Switch':1:1
 		'RX1 Digital Volume':1:68
 	EndSequence
@@ -2317,8 +2331,8 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX3 MIX1 INP1':0:RX1
 		'RX4 DSM MUX':0:DSM_INV
-		'LINEOUT1 Volume':1:50
-		'LINEOUT3 Volume':1:50
+		'LINEOUT1 Volume':1:14
+		'LINEOUT3 Volume':1:14
 		'RX3 Digital Volume':1:68
 		'RX4 Digital Volume':1:68
 	EndSequence
@@ -2356,6 +2370,8 @@ SectionDevice
 	EndSequence
 
 	ACDBID	14:1
+	EffectsMixerCTL "SRS TruMedia"
+	EC_REF_RXMixerCTL "SLIM_RX"
 
 EndSection
 
@@ -2484,10 +2500,10 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM RX2 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:Two
-		'RX3 MIX1 INP1':0:RX1
-		'RX4 DSM MUX':0:DSM_INV
-		'LINEOUT1 Volume':1:50
-		'LINEOUT3 Volume':1:50
+		'HPL AIC Output Mixer L_DAC Switch':1:1
+		'HPR AIC Output Mixer R_DAC Switch':1:1
+		'AIC DAC Playback SwitchL':1:0
+		'AIC DAC Playback SwitchR':1:0
 		'RX1 MIX1 INP1':0:RX1
 		'RX2 MIX1 INP1':0:RX2
 		'HPHL DAC Switch':1:1
@@ -2496,15 +2512,13 @@ SectionDevice
 		'HPHR Volume':1:80
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
-		'RX3 Digital Volume':1:68
-		'RX4 Digital Volume':1:68
 	EndSequence
 
 	DisableSequence
-		'RX3 MIX1 INP1':0:ZERO
-		'RX4 DSM MUX':0:CIC_OUT
-		'LINEOUT1 Volume':1:0
-		'LINEOUT3 Volume':1:0
+		'HPL AIC Output Mixer L_DAC Switch':1:0
+		'HPR AIC Output Mixer R_DAC Switch':1:0
+		'AIC DAC Playback SwitchL':1:1
+		'AIC DAC Playback SwitchR':1:1
 		'RX1 MIX1 INP1':0:ZERO
 		'RX2 MIX1 INP1':0:ZERO
 		'HPHL DAC Switch':1:0
@@ -3553,8 +3567,8 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX3 MIX1 INP1':0:RX1
 		'RX4 DSM MUX':0:DSM_INV
-		'LINEOUT1 Volume':1:50
-		'LINEOUT3 Volume':1:50
+		'LINEOUT1 Volume':1:14
+		'LINEOUT3 Volume':1:14
 		'RX3 Digital Volume':1:68
 		'RX4 Digital Volume':1:68
 	EndSequence
@@ -3636,12 +3650,12 @@ SectionModifier
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia1':1:1
-		'MI2S_RX Audio Mixer MultiMedia1':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia1':1:0
-		'MI2S_RX Audio Mixer MultiMedia1':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -3781,10 +3795,12 @@ SectionModifier
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -3813,12 +3829,12 @@ SectionModifier
 
 	EnableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
-		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
-		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4010,16 +4026,17 @@ SectionModifier
 	PlaybackPCM 0
 
 EndSection
+
 SectionModifier
 	Name "Play Voice"
 
 	EnableSequence
-		'MI2S_RX_Voice Mixer CSVoice':1:1
+		'SLIM_0_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
 	EndSequence
 
 	DisableSequence
-		'MI2S_RX_Voice Mixer CSVoice':1:0
+		'SLIM_0_RX_Voice Mixer CSVoice':1:0
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:0
 	EndSequence
 
@@ -4036,9 +4053,9 @@ SectionModifier
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer CSVoice':1:0
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4051,9 +4068,9 @@ SectionModifier
 	Name "Play VoiceMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -4211,11 +4228,13 @@ SectionModifier
 	Name "Play VOIP"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer Voip':1:1
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:1
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer Voip':1:0
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:0
 	EndSequence
@@ -4233,9 +4252,9 @@ SectionModifier
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer Voip':1:0
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4248,9 +4267,9 @@ SectionModifier
 	Name "Play VOIPMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer Voip':1:1
 		'Voip_Tx Mixer SLIM_0_TX_Voip':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -4850,10 +4869,14 @@ SectionModifier
 	Name "Play MI2S"
 
 	EnableSequence
+		'MI2S_RX Audio Mixer MultiMedia1':1:1
+		'SLIMBUS_DL_HL Switch':1:1
 		'MI2S_RX Port Mixer MI2S_TX':1:1
 	EndSequence
 
 	DisableSequence
+		'MI2S_RX Audio Mixer MultiMedia1':1:0
+		'SLIMBUS_DL_HL Switch':1:0
 		'MI2S_RX Port Mixer MI2S_TX':1:0
 	EndSequence
 
@@ -4888,11 +4911,13 @@ SectionModifier
 	Name "Play VoLTE"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer VoLTE':1:1
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:1
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer VoLTE':1:0
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:0
 	EndSequence
@@ -4910,9 +4935,9 @@ SectionModifier
 	EndSequence
 
 	DisableSequence
+		'VOC_EXT_EC MUX':1:0
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:0
 		'MI2S_RX_Voice Mixer VoLTE':1:0
-		'VOC_EXT_EC MUX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4925,9 +4950,9 @@ SectionModifier
 	Name "Play VoLTEMI2S Line"
 
 	EnableSequence
+		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer VoLTE':1:1
 		'VoLTE_Tx Mixer SLIM_0_TX_VoLTE':1:1
-		'VOC_EXT_EC MUX':1:1
 	EndSequence
 
 	DisableSequence
@@ -5215,11 +5240,13 @@ SectionModifier
 	EnableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
 		'MI2S_RX Audio Mixer MultiMedia5':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
 	EndSequence
 
 	DisableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
 		'MI2S_RX Audio Mixer MultiMedia5':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -5233,14 +5260,14 @@ SectionModifier
 
 	EnableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
-		 'MI2S_RX Audio Mixer MultiMedia5':1:1
 		'MI2S_RX Audio Mixer MultiMedia5':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
 	EndSequence
 
 	DisableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
-		 'MI2S_RX Audio Mixer MultiMedia5':1:0
 		'MI2S_RX Audio Mixer MultiMedia5':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -5715,11 +5742,13 @@ SectionModifier
 	EnableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia3':1:1
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia3':1:0
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	# ALSA PCMs
@@ -5734,13 +5763,13 @@ SectionModifier
 	EnableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia3':1:1
 		'MI2S_RX Audio Mixer MultiMedia3':1:1
-		'MI2S_RX Audio Mixer MultiMedia3':1:1
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia3':1:0
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
-		'MI2S_RX Audio Mixer MultiMedia3':1:0
+		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
