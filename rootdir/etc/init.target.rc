@@ -37,6 +37,9 @@ on early-init
     # Create modem FSG mount point
     mkdir /fsg 755 root root
 
+on init
+    # CM: We use our own ril-daemon service definition, see mmi-ril-daemon
+    stop ril-daemon
 
 # Mount point for Digital Personalization partition
     mkdir /customize 0500 root root
@@ -627,3 +630,11 @@ on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
     restart adbd
     write /sys/class/android_usb/android0/enable 1
+
+service mmi-ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket cutback stream 660 media radio
+    user root
+    group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log net_raw diag
