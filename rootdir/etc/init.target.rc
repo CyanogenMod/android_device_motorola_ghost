@@ -162,6 +162,9 @@ on post-fs
 # Enable Cifs module
     insmod /system/lib/modules/cifs.ko
     restorecon /data/media /data/media/0 /data/media/legacy /data/media/obb
+    exec /system/bin/restorecon -R /data/misc/wifi
+    exec /system/bin/restorecon -R /data/hostapd
+
     chmod 755 /system/etc/init.crda.sh
     chmod 755 /system/etc/init.qcom.bt.sh
     chmod 755 /system/etc/init.qcom.coex.sh
@@ -312,7 +315,7 @@ on boot
    mkdir /data/power_supply_logger 0750 mot_pwric log
 
     # Setup folder for aplogd
-    mkdir /data/logger 0750 log log
+    mkdir /data/aplogd 0750 log log
 
     # Setup folders for diag_mdlog
     mkdir /data/diag_mdlog 0750 system log

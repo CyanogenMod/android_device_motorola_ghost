@@ -94,11 +94,11 @@ case "$baseband" in
         ;;
 esac
 case "$target" in
-        "msm7630_surf" | "msm8660" | "msm8960" | "msm8974")
+        "msm7630_surf" | "msm8660" | "msm8974")
         start quipc_igsn
 esac
 case "$target" in
-        "msm7630_surf" | "msm8660" | "msm8960" | "msm8974")
+        "msm7630_surf" | "msm8660" | "msm8974")
         start quipc_main
 esac
 

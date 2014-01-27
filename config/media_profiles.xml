@@ -61,7 +61,7 @@
 <!ATTLIST VideoEncoderCap minFrameRate CDATA #REQUIRED>
 <!ATTLIST VideoEncoderCap maxFrameRate CDATA #REQUIRED>
 <!ELEMENT AudioEncoderCap EMPTY>
-<!ATTLIST AudioEncoderCap name (amrnb|amrwb|aac|wma|lpcm) #REQUIRED>
+<!ATTLIST AudioEncoderCap name (amrnb|amrwb|aac|heaac|aaceld|wma|lpcm) #REQUIRED>
 <!ATTLIST AudioEncoderCap enabled (true|false) #REQUIRED>
 <!ATTLIST AudioEncoderCap minBitRate CDATA #REQUIRED>
 <!ATTLIST AudioEncoderCap maxBitRate CDATA #REQUIRED>
