@@ -1,3 +1,6 @@
+# Apps
+app/com.qualcomm.services.location.apk
+
 # Bins
 bin/adspd
 bin/ap_gain.bin
@@ -6,6 +9,7 @@ bin/batt_health
 bin/bootmodem
 bin/charge_only_mode
 bin/efsks
+bin/gpsone_daemon
 bin/hardware_revisions.sh
 bin/imsdatadaemon
 bin/imsqmidaemon
@@ -64,6 +68,7 @@ lib/libloc_api_v02.so
 lib/libloc_core.so
 lib/libloc_ds_api.so
 lib/libloc_eng.so
+lib/libloc_xtra.so
 lib/libmdmcutback.so
 lib/libmercury.so
 lib/libmm-abl.so
@@ -107,6 +112,8 @@ vendor/lib/lib-imsSDP.so
 vendor/lib/lib-imsvt.so
 vendor/lib/lib-imsxml.so
 vendor/lib/libizat_core.so
+vendor/lib/liblocationservice.so
+vendor/lib/libloc_ext.so
 vendor/lib/lib-rcsimssjni.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
@@ -116,6 +123,8 @@ vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libulp2.so
 
 # Camera
 bin/mm-pp-daemon
@@ -246,6 +255,7 @@ etc/firmware/tfa9890_n1c2.patch
 etc/firmware/tfa9890_ringtone_table.preset
 etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
+etc/permissions/com.qualcomm.location.xml
 etc/DxHDCP.cfg
 etc/hdcp_8960.dat.enc
 etc/sap.conf

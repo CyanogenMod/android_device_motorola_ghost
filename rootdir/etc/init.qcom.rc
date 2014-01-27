@@ -402,6 +402,12 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
 
+service gpsone_daemon /system/bin/gpsone_daemon
+    class late_start
+    user gps
+    group gps qcom_oncrpc inet net_raw
+    disabled
+
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
     user root
