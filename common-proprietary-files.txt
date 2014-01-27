@@ -255,10 +255,16 @@ etc/firmware/tfa9890_n1c2.patch
 etc/firmware/tfa9890_ringtone_table.preset
 etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
 etc/permissions/com.qualcomm.location.xml
 etc/DxHDCP.cfg
 etc/hdcp_8960.dat.enc
 etc/sap.conf
+
+# Framework
+framework/qcnvitems.jar
+framework/qcrilhook.jar
 
 # Keystore
 vendor/firmware/keymaster/keymaster.b00
