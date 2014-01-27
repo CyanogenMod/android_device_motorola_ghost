@@ -203,6 +203,7 @@ on post-fs-data
     #Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
+    mkdir /data/misc/location/xtwifi 0770 gps gps
 
     #Create directory from IMS services
     mkdir /data/shared 0755
@@ -243,6 +244,12 @@ service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
     user root
     oneshot
+
+on property:bluetooth.sap.status=running
+    start bt-sap
+
+on property:bluetooth.sap.status=stopped
+    stop bt-sap
 
 service qcom-c_main-sh /system/bin/sh /init.class_main.sh
     class main
@@ -406,6 +413,24 @@ service gpsone_daemon /system/bin/gpsone_daemon
     class late_start
     user gps
     group gps qcom_oncrpc inet net_raw
+    disabled
+
+service location_mq /system/bin/location-mq
+    class late_start
+    user gps
+    group gps
+    disabled
+
+service xtwifi_inet /system/bin/xtwifi-inet-agent
+    class late_start
+    user gps
+    group inet gps
+    disabled
+
+service xtwifi_client /system/bin/xtwifi-client
+    class late_start
+    user gps
+    group net_admin wifi inet gps
     disabled
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh

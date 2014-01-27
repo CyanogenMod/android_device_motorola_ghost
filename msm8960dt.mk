@@ -70,7 +70,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/config/quipc.conf:system/etc/quipc.conf \
     $(LOCAL_PATH)/config/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/config/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/config/sec_config:system/etc/sec_config \
+    $(LOCAL_PATH)/config/xtwifi.conf:system/etc/xtwifi.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \

@@ -16,6 +16,7 @@ bin/imsqmidaemon
 bin/ims_rtp_daemon
 bin/irsc_util
 bin/ks
+bin/location-mq
 bin/moto_com.sh
 bin/mount_ext4.sh
 bin/mpdecision
@@ -31,6 +32,8 @@ bin/rild
 bin/rmt_storage
 bin/sensors.qcom
 bin/thermald
+bin/xtwifi-client
+bin/xtwifi-inet-agent
 
 # HAL
 lib/hw/camera.msm8960.so
@@ -85,7 +88,6 @@ lib/libmmstillomx.so
 lib/libmotext_inf.so
 lib/libmot_sensorlistener.so
 lib/libnetmgr.so
-lib/liboemcrypto.so
 lib/libOmxMux.so
 lib/libOmxVenc.so
 lib/libpn544_fw.so
@@ -101,6 +103,7 @@ lib/libril.so
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 lib/libsensorhubservice_jni.so
+vendor/lib/libalarmservice_jni.so
 vendor/lib/libdiag.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libgeofence.so

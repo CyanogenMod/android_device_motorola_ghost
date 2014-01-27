@@ -138,8 +138,8 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Component name of the service providing geofence API support.
-    <string name="config_geofenceProvider" translatable="false">com.qualcomm.services.location</string> -->
+    <!-- Component name of the service providing geofence API support. -->
+    <string name="config_geofenceProvider" translatable="false">com.qualcomm.services.location</string>
 
     <!-- Do not translate. Defines the slots is Two Digit Number for dialing normally not USSD -->
     <string-array name="config_twoDigitNumberPattern" translatable="false">
