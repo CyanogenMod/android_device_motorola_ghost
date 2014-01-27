@@ -593,6 +593,12 @@ service bootmodem /system/bin/bootmodem
     disabled
     oneshot
 
+service wcnss-service /system/bin/wcnss_service
+    class late_start
+    user system
+    group system wifi
+    oneshot
+
 service mmi-boot-sh /system/bin/logwrapper /system/bin/sh /init.mmi.boot.sh
     class core
     user root
