@@ -3913,7 +3913,7 @@ SectionModifier
 
 	EnableSequence
 		'VOC_EXT_EC MUX':1:1
-		'SLIM_0_RX_Voice Mixer CSVoice':1:1
+		'MI2S_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
 	EndSequence
 
