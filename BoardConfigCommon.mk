@@ -75,6 +75,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_RECOVERY_SWIPE := true
 
 # TWRP
 TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
