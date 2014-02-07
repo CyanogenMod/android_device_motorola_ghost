@@ -12,12 +12,4 @@
 /dev/block/platform/msm_sdcc.1/by-name/boot         /boot            emmc    defaults                                                     recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery        emmc    defaults                                                     recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/modem        /modem           ext4    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/misc         /misc            emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1            emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/sbl2         /sbl2            emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/sbl3         /sbl3            emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/tz           /tz              emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm             emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/aboot        /aboot           emmc    defaults                                                     recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/logo         /logo            emmc    defaults                                                     recoveryonly
 /devices/platform/msm_hsusb_host                    auto             auto    defaults                                                     voldmanaged=usbdisk:auto
