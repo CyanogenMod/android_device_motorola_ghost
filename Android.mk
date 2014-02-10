@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 
 ifeq ($(BOARD_VENDOR),motorola-qcom)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-ifneq ($(filter ghost xt1053 xt1055 xt1056 xt1058 xt1060 xt1080 xt1080m,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),moto_msm8960dt)
 
 LOCAL_PATH := $(call my-dir)
 

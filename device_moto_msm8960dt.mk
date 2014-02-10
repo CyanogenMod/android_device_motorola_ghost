@@ -1,21 +1,32 @@
-# Copyright (C) 2013 The CyanogenMod Project
+#
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-LOCAL_PATH := device/motorola/msm8960dt-common
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-## overlays
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+LOCAL_PATH := device/motorola/moto_msm8960dt
+
+# moto_msm8960dt specific overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+PRODUCT_LOCALES := en_US
+PRODUCT_LOCALES += xhdpi
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -155,4 +166,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
 
+# LTE, CDMA, GSM/WCDMA
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=10 \
+    telephony.lteOnCdmaDevice=1 \
+    persist.radio.mode_pref_nv10=1 \
+    persist.radio.no_wait_for_card=1 \
+    persist.radio.dfr_mode_set=1 \
+    persist.rmnet.mux=disabled \
+    persist.radio.eons.enabled=1
+
 $(call inherit-product, device/motorola/qcom-common/qcom-common.mk)
+$(call inherit-product, device/motorola/moto_msm8960dt/idc/idc.mk)
+$(call inherit-product, device/motorola/moto_msm8960dt/keylayout/keylayout.mk)
+$(call inherit-product, device/motorola/qcom-common/keylayout/keylayout.mk)
+$(call inherit-product, device/motorola/qcom-common/modules/nfc/nfc.mk)
+$(call inherit-product, vendor/motorola/moto_msm8960dt/moto_msm8960dt-vendor.mk)
