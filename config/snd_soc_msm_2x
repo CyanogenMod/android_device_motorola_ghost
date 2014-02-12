@@ -1959,7 +1959,7 @@ SectionVerb
 
 	DisableSequence
 		'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
-		'MI2S_RX Audio Mixer MultiMedia5':1:1
+		'MI2S_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2319,10 +2319,10 @@ SectionDevice
 		'SLIM RX1 MUX':0:AIF1_PB
 		'SLIM RX2 MUX':0:AIF1_PB
 		'SLIM_0_RX Channels':0:Two
-		'RX3 MIX1 INP1':0:RX1
-		'RX4 DSM MUX':0:DSM_INV
-		'LINEOUT1 Volume':1:14
-		'LINEOUT3 Volume':1:14
+		'HPL AIC Output Mixer L_DAC Switch':1:1
+		'HPR AIC Output Mixer R_DAC Switch':1:1
+		'AIC DAC Playback SwitchL':1:0
+		'AIC DAC Playback SwitchR':1:0
 		'RX1 MIX1 INP1':0:RX1
 		'RX2 MIX1 INP1':0:RX2
 		'HPHL DAC Switch':1:1
@@ -2331,17 +2331,15 @@ SectionDevice
 		'HPHR Volume':1:80
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
-		'RX3 Digital Volume':1:68
-		'RX4 Digital Volume':1:68
 	EndSequence
 
 	DisableSequence
 		'SLIM RX1 MUX':0:ZERO
 		'SLIM RX2 MUX':0:ZERO
-		'RX3 MIX1 INP1':0:ZERO
-		'RX4 DSM MUX':0:CIC_OUT
-		'LINEOUT1 Volume':1:0
-		'LINEOUT3 Volume':1:0
+		'HPL AIC Output Mixer L_DAC Switch':1:0
+		'HPR AIC Output Mixer R_DAC Switch':1:0
+		'AIC DAC Playback SwitchL':1:1
+		'AIC DAC Playback SwitchR':1:1
 		'RX1 MIX1 INP1':0:ZERO
 		'RX2 MIX1 INP1':0:ZERO
 		'HPHL DAC Switch':1:0
