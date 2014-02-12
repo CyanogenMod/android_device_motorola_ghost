@@ -55,23 +55,6 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "HiFiHeadphones"
-
-	EnableSequence
-		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:1
-	EndSequence
-
-	DisableSequence
-		'SLIMBUS_0_RX Audio Mixer MultiMedia1':1:0
-	EndSequence
-
-	# ALSA PCMs
-	CapturePCM 0
-	PlaybackPCM 0
-
-EndSection
-
-SectionVerb
 	Name "HiFiBT SCO Rx"
 
 	EnableSequence
@@ -251,22 +234,6 @@ SectionVerb
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia3':1:0
-		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 4
-
-EndSection
-
-SectionVerb
-	Name "HiFi Low PowerHeadphones"
-
-	EnableSequence
-		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:1
-	EndSequence
-
-	DisableSequence
 		'SLIMBUS_0_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
@@ -1550,23 +1517,6 @@ SectionVerb
 
 	DisableSequence
 		'MI2S_RX Audio Mixer MultiMedia5':1:0
-		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "HiFi LowlatencyHeadphones"
-
-	EnableSequence
-		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
-	EndSequence
-
-	DisableSequence
 		'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
 	EndSequence
 
