@@ -64,34 +64,31 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "ghost_retail-user 4.4 13.11.1Q2.X-69-3 51 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4/13.11.1Q2.X-69-3/51:user/release-keys");
         property_set("telephony.lteOnGsmDevice", "1");
-        property_set(PROP_QEMU_NAVKEY, "0");
     } else if ((ISMATCH(radio, "0x2")) && (ISMATCH(bootdevice, "ghost"))) {
         /* xt1060 */
         property_set("ro.product.device", "ghost_verizon");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_verizon-user 4.4 13.11.1Q2.X-69-3 5 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:4.4/13.11.1Q2.X-69-3/5:user/release-keys");
-        property_set(PROP_QEMU_NAVKEY, "0");
     } else if (ISMATCH(bootdevice, "obake-maxx")) {
         /* xt1080 */
         property_set("ro.product.device", "obake");
         property_set("ro.product.model", "DROID MAXX");
         property_set("ro.build.description", "obake_verizon-user 4.4 SU2-3 15 release-keys");
         property_set("ro.build.fingerprint", "motorola/obake_verizon/obake:4.4/SU2-3/15:user/release-keys");
+        property_set(PROP_QEMU_NAVKEY, "1");
     } else if (ISMATCH(radio, "0x4")) {
         /* xt1056 */
         property_set("ro.product.device", "ghost_sprint");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_sprint-user 4.4 13.11.3Q2.X-69-3-8 12 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_sprint/ghost:4.4/13.11.3Q2.X-69-3-8/12:user/release-keys");
-        property_set(PROP_QEMU_NAVKEY, "0");
     } else if (ISMATCH(radio, "0x5")) {
         /* xt1055 */
         property_set("ro.product.device", "ghost_usc");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_usc-user 4.4 13.11.3Q2.X-69-3-2 11 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_usc/ghost:4.4/13.11.3Q2.X-69-3-2/11:user/release-keys");
-        property_set(PROP_QEMU_NAVKEY, "0");
     } else if (ISMATCH(radio, "0x6")) {
         /* xt1053 */
         property_set("ro.product.device", "ghost_retail");
@@ -99,7 +96,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "ghost_retail-user 4.4 13.11.1Q2.X-69-3 51 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4/13.11.1Q2.X-69-3/51:user/release-keys");
         property_set("telephony.lteOnGsmDevice", "1");
-        property_set(PROP_QEMU_NAVKEY, "0");
     }
 
     if (ISMATCH(carrier, "vzw")) {
