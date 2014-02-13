@@ -1,6 +1,3 @@
-# Apps
-app/com.qualcomm.services.location.apk
-
 # Bins
 bin/adspd
 bin/ap_gain.bin
@@ -9,14 +6,12 @@ bin/batt_health
 bin/bootmodem
 bin/charge_only_mode
 bin/efsks
-bin/gpsone_daemon
 bin/hardware_revisions.sh
 bin/imsdatadaemon
 bin/imsqmidaemon
 bin/ims_rtp_daemon
 bin/irsc_util
 bin/ks
-bin/location-mq
 bin/moto_com.sh
 bin/mount_ext4.sh
 bin/mpdecision
@@ -30,14 +25,12 @@ bin/qmuxd
 bin/refuse
 bin/rild
 bin/rmt_storage
+bin/sapd
 bin/sensors.qcom
 bin/thermald
-bin/xtwifi-client
-bin/xtwifi-inet-agent
 
 # HAL
 lib/hw/camera.msm8960.so
-lib/hw/gps.default.so
 lib/hw/nfc.MSM8960.so
 lib/hw/sensorhub.msm8960.so
 lib/hw/sensors.msm8960.so
@@ -61,17 +54,11 @@ lib/libdsutils.so
 lib/libDxHdcp.so
 lib/libFileMux.so
 lib/libgemini.so
-lib/libgps.utils.so
 lib/libI420colorconvert.so
 lib/libidl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
-lib/libloc_api_v02.so
-lib/libloc_core.so
-lib/libloc_ds_api.so
-lib/libloc_eng.so
-lib/libloc_xtra.so
 lib/libmdmcutback.so
 lib/libmercury.so
 lib/libmm-abl.so
@@ -106,7 +93,6 @@ lib/libsensorhubservice_jni.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libdiag.so
 vendor/lib/lib-dplmedia.so
-vendor/lib/libgeofence.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsrcs.so
@@ -114,9 +100,6 @@ vendor/lib/lib-imss.so
 vendor/lib/lib-imsSDP.so
 vendor/lib/lib-imsvt.so
 vendor/lib/lib-imsxml.so
-vendor/lib/libizat_core.so
-vendor/lib/liblocationservice.so
-vendor/lib/libloc_ext.so
 vendor/lib/lib-rcsimssjni.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
@@ -260,10 +243,8 @@ etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/com.qualcomm.location.xml
 etc/DxHDCP.cfg
 etc/hdcp_8960.dat.enc
-etc/sap.conf
 
 # Framework
 framework/qcnvitems.jar

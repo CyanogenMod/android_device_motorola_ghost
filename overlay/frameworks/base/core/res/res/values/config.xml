@@ -127,9 +127,6 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Component name of the service providing geofence API support. -->
-    <string name="config_geofenceProvider" translatable="false">com.qualcomm.services.location</string>
-
     <!-- Do not translate. Defines the slots is Two Digit Number for dialing normally not USSD -->
     <string-array name="config_twoDigitNumberPattern" translatable="false">
     </string-array>
@@ -180,10 +177,6 @@
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Enable overlay for all location components. -->
-    <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
-    <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
 
     <!-- Performance profiles -->
     <string name="config_perf_profile_prop">sys.perf.profile</string>

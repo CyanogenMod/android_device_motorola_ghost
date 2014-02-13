@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
 # HAL
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
+    gps.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     keystore.msm8960 \
@@ -64,14 +65,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
 
-# Gps/location secuity configuration file
+# Sap/location secuity configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/config/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/config/quipc.conf:system/etc/quipc.conf \
     $(LOCAL_PATH)/config/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/config/sec_config:system/etc/sec_config \
-    $(LOCAL_PATH)/config/xtwifi.conf:system/etc/xtwifi.conf
+    $(LOCAL_PATH)/config/sec_config:system/etc/sec_config
 
 # Wifi
 PRODUCT_COPY_FILES += \
