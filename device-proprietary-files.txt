@@ -77,7 +77,6 @@ lib/libmot_sensorlistener.so
 lib/libnetmgr.so
 lib/libOmxMux.so
 lib/libOmxVenc.so
-lib/libpn544_fw.so
 lib/libqcci_legacy.so
 lib/libqdi.so
 lib/libqdp.so
