@@ -155,7 +155,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qmienabled=true \
     persist.fuse_sdcard=true \
     ro.crypto.fuse_sdcard=true \
-    ro.qc.sdk.audio.fluencetype=none \
+    ro.qc.sdk.audio.fluencetype=fluence \
     ro.cwm.forbid_format="/fsg,/firmware,/persist,/modem,/boot"
 
 # Opengles version 3
