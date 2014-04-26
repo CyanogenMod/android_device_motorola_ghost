@@ -17,4 +17,3 @@
 
 def FullOTA_InstallEnd(info):
 	info.script.AppendExtra('ifelse(is_substring("obake-maxx", getprop("ro.boot.device")), run_program("/sbin/sh", "-c", "busybox cp -R /system/xt1080/* /system/"));')
-	info.script.AppendExtra('delete_recursive("/system/xt1080");')
