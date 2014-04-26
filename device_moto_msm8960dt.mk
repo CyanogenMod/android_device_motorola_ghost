@@ -117,6 +117,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
 
+# Charger mode setup
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/moto_com.sh:system/bin/moto_com.sh
+
 # Media config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \

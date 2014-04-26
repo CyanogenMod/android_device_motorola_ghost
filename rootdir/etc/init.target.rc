@@ -91,10 +91,9 @@ on start-charging
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_fail_clear
     start batt_health
     start qcom-post-boot
-    # Prepare for charge-only mode
+    # Prepare for charger mode
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
     write /sys/devices/system/cpu/cpu1/online 0
-    exec /system/bin/charge_only_mode
 
 on property:ro.modem.no_wdog_chk=1
    write /sys/module/modem_8960/parameters/no_wdog_chk 1

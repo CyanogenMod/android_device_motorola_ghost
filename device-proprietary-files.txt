@@ -4,7 +4,6 @@ bin/ap_gain.bin
 bin/ap_gain_mmul.bin
 bin/batt_health
 bin/bootmodem
-bin/charge_only_mode
 bin/efsks
 bin/hardware_revisions.sh
 bin/imsdatadaemon
@@ -12,7 +11,6 @@ bin/imsqmidaemon
 bin/ims_rtp_daemon
 bin/irsc_util
 bin/ks
-bin/moto_com.sh
 bin/mount_ext4.sh
 bin/mpdecision
 bin/msp430
