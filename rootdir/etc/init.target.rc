@@ -460,6 +460,7 @@ on property:qcom.thermal=thermald
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
    user root
+   group root system
    disabled
 
 service qrngd /system/bin/qrngd -f
