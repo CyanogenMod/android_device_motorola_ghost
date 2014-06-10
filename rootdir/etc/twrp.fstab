@@ -5,3 +5,5 @@
 /system       ext4      /dev/block/platform/msm_sdcc.1/by-name/system
 /boot         emmc      /dev/block/platform/msm_sdcc.1/by-name/boot
 /recovery     emmc      /dev/block/platform/msm_sdcc.1/by-name/recovery
+/pds          emmc      /dev/block/platform/msm_sdcc.1/by-name/pds          flags=backup=1;display=PDS
+/usb-otg      vfat      /dev/block/sda1   /dev/block/sda                    flags=display="USB OTG";storage;wipeingui;removable
