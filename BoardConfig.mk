@@ -76,6 +76,9 @@ BOARD_CHARGER_RES := device/motorola/moto_msm8960dt/charger
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
+# GPS
+BOARD_HAVE_NEW_QC_GPS := true
+
 # Graphics
 TARGET_QCOM_DISPLAY_VARIANT := caf
 BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
