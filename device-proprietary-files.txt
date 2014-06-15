@@ -59,6 +59,10 @@ lib/libchromatix_ov8825_default_video.so
 lib/libchromatix_ov8825_preview.so
 lib/libchromatix_ov9726_default_video.so
 lib/libchromatix_ov9726_preview.so
+lib/libchromatix_ov10820_default_video.so
+lib/libchromatix_ov10820_hfr_60fps.so
+lib/libchromatix_ov10820_preview.so
+lib/libchromatix_ov10820_zsl.so
 lib/libchromatix_s5k3l1yx_default_video.so
 lib/libchromatix_s5k3l1yx_hfr_60fps.so
 lib/libchromatix_s5k3l1yx_hfr_90fps.so
