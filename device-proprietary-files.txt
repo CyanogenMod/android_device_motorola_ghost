@@ -1,137 +1,35 @@
-# Bins
+# ADSP
 bin/adspd
-bin/ap_gain.bin
-bin/ap_gain_mmul.bin
-bin/batt_health
-bin/bootmodem
-bin/efsks
-bin/hardware_revisions.sh
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
-bin/irsc_util
-bin/ks
-bin/mount_ext4.sh
-bin/mpdecision
-bin/msp430
-bin/netmgrd
-bin/qcks
-bin/qdumpd
-bin/qmi_motext_hook
-bin/qmiproxy
-bin/qmuxd
-bin/refuse
-bin/rild
-bin/rmt_storage
-bin/sapd
-bin/sensors.qcom
-bin/thermald
-
-# HAL
-lib/hw/camera.msm8960.so
-lib/hw/nfc.MSM8960.so
-lib/hw/sensorhub.msm8960.so
-lib/hw/sensors.msm8960.so
-
-# Libs
-lib/libacdbloader.so
-lib/libadropbox.so
 lib/libadspd.so
 lib/libadspd-jni.so
 lib/libadsprpc.so
+
+# Audio
+bin/ap_gain.bin
+bin/ap_gain_mmul.bin
+lib/libacdbloader.so
 lib/libalsautils.so
 lib/libaudcal.so
 lib/libaudioalsa.so
-lib/libbabysit.so
-lib/libconfigdb.so
-lib/libdsi_netctrl.so
-lib/libdsprofile.so
-lib/libdss.so
-lib/libdsucsd.so
-lib/libdsutils.so
-lib/libDxHdcp.so
-lib/libFileMux.so
-lib/libgemini.so
-lib/libI420colorconvert.so
-lib/libidl.so
-lib/libimage-jpeg-dec-omx-comp.so
-lib/libimage-jpeg-enc-omx-comp.so
-lib/libimage-omx-common.so
-lib/libmdmcutback.so
-lib/libmercury.so
-lib/libmm-abl.so
-lib/libmm-abl-oem.so
-lib/libmm-color-convertor.so
-lib/libmmipl.so
-lib/libmmjpeg.so
-lib/libmmjpeg_interface.so
-lib/libmmjps.so
-lib/libmmmpo.so
-lib/libmmmpod.so
-lib/libmmrtpencoder.so
-lib/libmmstillomx.so
-lib/libmotext_inf.so
-lib/libmot_sensorlistener.so
-lib/libnetmgr.so
-lib/libOmxMux.so
-lib/libOmxVenc.so
-lib/libqcci_legacy.so
-lib/libqdi.so
-lib/libqdp.so
-lib/libqmi.so
-lib/libqmi_client_qmux.so
-lib/libqmi_csvt_srvc.so
-lib/libqmiservices.so
-lib/libreference-ril.so
-lib/libril.so
-lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
-lib/libsensorhubservice_jni.so
-vendor/lib/libalarmservice_jni.so
-vendor/lib/libdiag.so
-vendor/lib/lib-dplmedia.so
-vendor/lib/lib-imsdpl.so
-vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcs.so
-vendor/lib/lib-imss.so
-vendor/lib/lib-imsSDP.so
-vendor/lib/lib-imsvt.so
-vendor/lib/lib-imsxml.so
-vendor/lib/lib-rcsimssjni.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpdaemoninterface.so
-vendor/lib/lib-rtpsl.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libulp2.so
+
+# Audio firmware
+etc/firmware/aonvr1.bin
+etc/firmware/aonvr2.bin
+etc/firmware/tfa9890.config
+etc/firmware/tfa9890.eq
+etc/firmware/tfa9890.speaker
+etc/firmware/tfa9890_music_table.preset
+etc/firmware/tfa9890_n1b12.patch
+etc/firmware/tfa9890_n1c2.patch
+etc/firmware/tfa9890_ringtone_table.preset
+etc/firmware/tfa9890_voice_table.preset
+etc/firmware/VRGain.bin
 
 # Camera
-bin/mm-pp-daemon
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 bin/v4l2-qcamera-app
-lib/libl6lencgain.so
-lib/libmmcamera_3a_bayer.so
-lib/libmmcamera_3a_legacy.so
-lib/libmmcamera_frameproc.so
-lib/libmmcamera_hdr_lib.so
-lib/libmmcamera_image_stab.so
-lib/libmmcamera_imx091.so
-lib/libmmcamera_interface.so
-lib/libmmcamera_plugin.so
-lib/libmmcamera_statsproc31.so
-lib/libmmcamera_tintless_algo.so
-lib/libmmcamera_tintless_wrapper.so
-lib/libmmcamera_wavelet_lib.so
-lib/libmotcameracalibration.so
-lib/libmot_drscene_detect.so
-lib/libmot_hdr.so
-lib/libmot_sis.so
-lib/liboemcamera.so
+lib/hw/camera.msm8960.so
 lib/libchromatix_imx074_default_video.so
 lib/libchromatix_imx074_preview.so
 lib/libchromatix_imx074_video_hd.so
@@ -178,15 +76,52 @@ lib/libchromatix_s5k4e1_preview.so
 lib/libchromatix_s5k5b3g_default_video.so
 lib/libchromatix_s5k5b3g_preview.so
 lib/libchromatix_s5k5b3g_zsl.so
+lib/libimage-jpeg-dec-omx-comp.so
+lib/libimage-jpeg-enc-omx-comp.so
+lib/libimage-omx-common.so
+lib/libl6lencgain.so
+lib/libmmcamera_3a_bayer.so
+lib/libmmcamera_3a_legacy.so
+lib/libmmcamera_frameproc.so
+lib/libmmcamera_hdr_lib.so
+lib/libmmcamera_image_stab.so
+lib/libmmcamera_imx091.so
+lib/libmmcamera_interface.so
+lib/libmmcamera_plugin.so
+lib/libmmcamera_statsproc31.so
+lib/libmmcamera_tintless_algo.so
+lib/libmmcamera_tintless_wrapper.so
+lib/libmmcamera_wavelet_lib.so
+lib/libmmipl.so
+lib/libmmjpeg.so
+lib/libmmjpeg_interface.so
+lib/libmmjps.so
+lib/libmmmpo.so
+lib/libmmmpod.so
+lib/libmmstillomx.so
+lib/libmotcameracalibration.so
+lib/libmot_drscene_detect.so
+lib/libmot_hdr.so
+lib/libmot_sis.so
+lib/liboemcamera.so
 lib/libVdlFaceDetection.so
-lib/pp_proc_plugin.so
 lib/VdlData.dat
 
-## Adreno GPU
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
+# DxHDCP firmware
+etc/firmware/dxhdcp2.b00
+etc/firmware/dxhdcp2.b01
+etc/firmware/dxhdcp2.b02
+etc/firmware/dxhdcp2.b03
+etc/firmware/dxhdcp2.mdt
+etc/DxHDCP.cfg
+etc/hdcp_8960.dat.enc
+lib/libDxHdcp.so
+
+# GPS
+vendor/lib/libquipc_os_api.so
+vendor/lib/libulp2.so
+
+# Graphics
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -204,16 +139,55 @@ vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
 vendor/lib/libsc-a3xx.so
 
-# Etc
-etc/firmware/aonvr1.bin
-etc/firmware/aonvr2.bin
-etc/firmware/cyttsp_8064_mtp.hex
-etc/firmware/cyttsp_8960_cdp.hex
-etc/firmware/dxhdcp2.b00
-etc/firmware/dxhdcp2.b01
-etc/firmware/dxhdcp2.b02
-etc/firmware/dxhdcp2.b03
-etc/firmware/dxhdcp2.mdt
+# Graphics firmware
+etc/firmware/a300_pfp.fw
+etc/firmware/a300_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+
+# IMS - currently unused but have dependencies to qmi
+bin/imsdatadaemon
+bin/imsqmidaemon
+bin/ims_rtp_daemon
+lib/libmmrtpencoder.so
+vendor/lib/lib-dplmedia.so
+vendor/lib/lib-imsdpl.so
+vendor/lib/lib-imsqimf.so
+vendor/lib/lib-imsrcs.so
+vendor/lib/lib-imss.so
+vendor/lib/lib-imsSDP.so
+vendor/lib/lib-imsvt.so
+vendor/lib/lib-imsxml.so
+vendor/lib/lib-rcsimssjni.so
+vendor/lib/lib-rtpcommon.so
+vendor/lib/lib-rtpcore.so
+vendor/lib/lib-rtpdaemoninterface.so
+vendor/lib/lib-rtpsl.so
+
+# Keystore
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
+
+# Media
+lib/libI420colorconvert.so
+lib/libFileMux.so
+lib/libgemini.so
+lib/libmercury.so
+lib/libmm-color-convertor.so
+lib/libOmxMux.so
+lib/libOmxVenc.so
+
+# Moto
+bin/batt_health
+bin/hardware_revisions.sh
+bin/mount_ext4.sh
+bin/refuse
+
+# MSP firmware
+bin/msp430
 etc/firmware/mspfirmware.bin
 etc/firmware/mspfirmware_p0.bin
 etc/firmware/mspfirmware_p1.bin
@@ -222,6 +196,78 @@ etc/firmware/mspversion.txt
 etc/firmware/mspversion_p0.txt
 etc/firmware/mspversion_p1.txt
 etc/firmware/mspversion_p2.txt
+
+# NFC
+lib/hw/nfc.MSM8960.so
+
+# Perf
+bin/mpdecision
+
+# Postprocessing
+bin/mm-pp-daemon
+lib/libmm-abl.so
+lib/libmm-abl-oem.so
+lib/pp_proc_plugin.so
+
+# Qualcomm framework
+bin/irsc_util
+lib/libconfigdb.so
+lib/libdsi_netctrl.so
+lib/libdsprofile.so
+lib/libdss.so
+lib/libdsucsd.so
+lib/libdsutils.so
+lib/libidl.so
+lib/libqcci_legacy.so
+lib/libqdi.so
+lib/libqdp.so
+lib/libqmi.so
+lib/libqmi_client_qmux.so
+lib/libqmi_csvt_srvc.so
+lib/libqmiservices.so
+vendor/lib/libdiag.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+
+# Radio
+bin/bootmodem
+bin/efsks
+bin/ks
+bin/netmgrd
+bin/qcks
+bin/qdumpd
+bin/qmi_motext_hook
+bin/qmiproxy
+bin/qmuxd
+bin/rild
+bin/rmt_storage
+bin/sapd
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+-framework/qcnvitems.jar
+-framework/qcrilhook.jar
+lib/libadropbox.so
+lib/libbabysit.so
+lib/libmdmcutback.so
+lib/libmotext_inf.so
+lib/libnetmgr.so
+lib/libreference-ril.so
+lib/libril.so
+lib/libril-qc-qmi-1.so
+lib/libril-qcril-hook-oem.so
+
+# Sensors
+bin/sensors.qcom
+lib/hw/sensorhub.msm8960.so
+lib/hw/sensors.msm8960.so
+lib/libmot_sensorlistener.so
+lib/libsensorhubservice_jni.so
+
+# Touch frimware
+etc/firmware/cyttsp_8064_mtp.hex
+etc/firmware/cyttsp_8960_cdp.hex
 etc/firmware/synaptics-s3310b-13061200-16a405-obakem-p1.tdat
 etc/firmware/synaptics-s3310b-13061201-16a405-obakem.tdat
 etc/firmware/synaptics-s3402-13040101-164656-ghost.tdat
@@ -229,30 +275,12 @@ etc/firmware/synaptics-s3402-13040101-164656-ghost-p1a.tdat
 etc/firmware/synaptics-s3402-13042202-164656-obake.tdat
 etc/firmware/synaptics-s3402b-13050201-167746-ghost.tdat
 etc/firmware/synaptics-s3402b-13071701-16cadd-obake.tdat
-etc/firmware/tfa9890.config
-etc/firmware/tfa9890.eq
-etc/firmware/tfa9890.speaker
-etc/firmware/tfa9890_music_table.preset
-etc/firmware/tfa9890_n1b12.patch
-etc/firmware/tfa9890_n1c2.patch
-etc/firmware/tfa9890_ringtone_table.preset
-etc/firmware/tfa9890_voice_table.preset
-etc/firmware/VRGain.bin
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
-etc/DxHDCP.cfg
-etc/hdcp_8960.dat.enc
 
-# Framework
-framework/qcnvitems.jar
-framework/qcrilhook.jar
+# Thermal
+bin/thermald
 
-# Keystore
-vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster/keymaster.mdt
+# Misc
+vendor/lib/libalarmservice_jni.so
 
 # xt1080
 xt1080/bin/ap_gain.bin
