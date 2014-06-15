@@ -11,6 +11,7 @@ lib/libacdbloader.so
 lib/libalsautils.so
 lib/libaudcal.so
 lib/libaudioalsa.so
+lib/libmotaudioutils.so
 
 # Audio firmware
 etc/firmware/aonvr1.bin
@@ -26,9 +27,7 @@ etc/firmware/tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
 
 # Camera
-bin/mm-qcamera-app
 bin/mm-qcamera-daemon
-bin/v4l2-qcamera-app
 lib/hw/camera.msm8960.so
 lib/libchromatix_imx074_default_video.so
 lib/libchromatix_imx074_preview.so
@@ -60,10 +59,6 @@ lib/libchromatix_ov8825_default_video.so
 lib/libchromatix_ov8825_preview.so
 lib/libchromatix_ov9726_default_video.so
 lib/libchromatix_ov9726_preview.so
-lib/libchromatix_ov10820_default_video.so
-lib/libchromatix_ov10820_hfr_60fps.so
-lib/libchromatix_ov10820_preview.so
-lib/libchromatix_ov10820_zsl.so
 lib/libchromatix_s5k3l1yx_default_video.so
 lib/libchromatix_s5k3l1yx_hfr_60fps.so
 lib/libchromatix_s5k3l1yx_hfr_90fps.so
@@ -73,9 +68,6 @@ lib/libchromatix_s5k3l1yx_video_hd.so
 lib/libchromatix_s5k3l1yx_zsl.so
 lib/libchromatix_s5k4e1_default_video.so
 lib/libchromatix_s5k4e1_preview.so
-lib/libchromatix_s5k5b3g_default_video.so
-lib/libchromatix_s5k5b3g_preview.so
-lib/libchromatix_s5k5b3g_zsl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
@@ -106,6 +98,9 @@ lib/libmot_sis.so
 lib/liboemcamera.so
 lib/libVdlFaceDetection.so
 lib/VdlData.dat
+
+# DRM
+vendor/lib/mediadrm/libwvdrmengine.so
 
 # DxHDCP firmware
 etc/firmware/dxhdcp2.b00
@@ -174,6 +169,7 @@ vendor/firmware/keymaster/keymaster.mdt
 # Media
 lib/libI420colorconvert.so
 lib/libFileMux.so
+lib/libSHIMDivxDrm.so
 lib/libgemini.so
 lib/libmercury.so
 lib/libmm-color-convertor.so
@@ -241,7 +237,6 @@ bin/qdumpd
 bin/qmi_motext_hook
 bin/qmiproxy
 bin/qmuxd
-bin/rild
 bin/rmt_storage
 bin/sapd
 etc/permissions/qcnvitems.xml
@@ -253,8 +248,6 @@ lib/libbabysit.so
 lib/libmdmcutback.so
 lib/libmotext_inf.so
 lib/libnetmgr.so
-lib/libreference-ril.so
-lib/libril.so
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 
