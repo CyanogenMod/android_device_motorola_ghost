@@ -1795,6 +1795,8 @@ SectionDevice
 	EndSequence
 
 	ACDBID	14:1
+	EffectsMixerCTL "SRS TruMedia"
+	EC_REF_RXMixerCTL "SLIM_RX"
 
 EndSection
 
@@ -2335,33 +2337,23 @@ SectionDevice
 
 	EnableSequence
 		'AIF1_CAP Mixer SLIM TX7':1:1
-		'AIF1_CAP Mixer SLIM TX8':1:1
+		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC4
 		'DEC4 MUX':0:ADC3
+		'TX4 HPF cut off':0:MIN_3DB_75Hz
 		'DEC4 Volume':1:68
 		'ADC3 Volume':1:100
-		'SLIM TX8 MUX':0:DEC3
-		'DEC3 MUX':0:ADC4
-		'DEC3 Volume':1:68
-		'ADC4 Volume':1:100
 		'MICBIAS1 CAPLESS Switch':1:0
-		'MICBIAS3 CAPLESS Switch':1:0
-		'SLIM_0_TX Channels':0:Two
 	EndSequence
 
 	DisableSequence
 		'AIF1_CAP Mixer SLIM TX7':1:0
-		'AIF1_CAP Mixer SLIM TX8':1:0
 		'SLIM TX7 MUX':0:ZERO
 		'DEC4 MUX':0:ZERO
-		'DEC4 Volume':1:0
-		'SLIM TX8 MUX':0:ZERO
-		'DEC3 MUX':0:ZERO
-		'DEC3 Volume':1:0
+		'TX4 HPF cut off':0:MIN_3DB_4Hz
+		'DEC4 Volume':1:68
 		'ADC3 Volume':1:0
-		'ADC4 Volume':1:0
 		'MICBIAS1 CAPLESS Switch':1:0
-		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	ACDBID	11:2
@@ -3262,13 +3254,14 @@ SectionModifier
 EndSection
 
 SectionModifier
-	Name "Play VoiceSpeaker"
+	Name "Play VoiceVoice Speaker"
 
 	EnableSequence
 	EndSequence
 
+	# HASH: this causes widgets to hang when writing this
+	# 'VOC_EXT_EC MUX':1:0
 	DisableSequence
-		'VOC_EXT_EC MUX':1:0
 		'MI2S_RX_Voice Mixer CSVoice':1:0
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:0
 	EndSequence
@@ -3280,10 +3273,11 @@ SectionModifier
 EndSection
 
 SectionModifier
-	Name "Play VoiceLine"
+	Name "Play VoiceSpeaker DMIC Endfire"
 
+	# HASH: this causes widgets to hang when writing this
+	# 'VOC_EXT_EC MUX':1:1
 	EnableSequence
-		'VOC_EXT_EC MUX':1:1
 		'MI2S_RX_Voice Mixer CSVoice':1:1
 		'Voice_Tx Mixer SLIM_0_TX_Voice':1:1
 	EndSequence
