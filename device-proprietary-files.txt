@@ -72,6 +72,9 @@ lib/libchromatix_s5k3l1yx_video_hd.so
 lib/libchromatix_s5k3l1yx_zsl.so
 lib/libchromatix_s5k4e1_default_video.so
 lib/libchromatix_s5k4e1_preview.so
+lib/libchromatix_s5k5b3g_default_video.so
+lib/libchromatix_s5k5b3g_preview.so
+lib/libchromatix_s5k5b3g_zsl.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
