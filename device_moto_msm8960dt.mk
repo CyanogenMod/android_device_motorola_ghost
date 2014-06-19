@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/egl.cfg:system/lib/egl/egl.cfg
 
+# GPS configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
+
 # Sap/location secuity configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/sap.conf:system/etc/sap.conf \
