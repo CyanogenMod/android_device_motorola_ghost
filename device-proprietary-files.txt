@@ -7,10 +7,7 @@ lib/libadsprpc.so
 # Audio
 bin/ap_gain.bin
 bin/ap_gain_mmul.bin
-lib/libacdbloader.so
-lib/libalsautils.so
 lib/libaudcal.so
-lib/libaudioalsa.so
 lib/libmotaudioutils.so
 
 # Audio firmware
@@ -107,18 +104,9 @@ lib/libVdlFaceDetection.so
 lib/VdlData.dat
 
 # DRM
+bin/qseecomd
+lib/libQSEEComAPI.so
 vendor/lib/mediadrm/libwvdrmengine.so
-
-# DxHDCP firmware
-etc/firmware/dxhdcp2.b00
-etc/firmware/dxhdcp2.b01
-etc/firmware/dxhdcp2.b02
-etc/firmware/dxhdcp2.b03
-etc/firmware/dxhdcp2.mdt
-etc/DxHDCP.cfg
-etc/hdcp_8960.dat.enc
-lib/libDxHdcp.so
-
 
 # GPS
 lib/libgeofence.so
@@ -143,12 +131,6 @@ vendor/lib/libllvm-a3xx.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
 vendor/lib/libsc-a3xx.so
-
-# Graphics firmware
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
 
 # IMS - currently unused but have dependencies to qmi
 bin/imsdatadaemon
@@ -177,20 +159,17 @@ vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
 
 # Media
-lib/libI420colorconvert.so
-lib/libFileMux.so
-lib/libSHIMDivxDrm.so
-lib/libgemini.so
-lib/libmercury.so
-lib/libmm-color-convertor.so
-lib/libOmxMux.so
 lib/libOmxVenc.so
+lib/libmmparser.so
 
-# Moto
-bin/batt_health
-bin/hardware_revisions.sh
-bin/mount_ext4.sh
-bin/refuse
+#  Media firmware
+etc/firmware/vidc.b00
+etc/firmware/vidc.b01
+etc/firmware/vidc.b02
+etc/firmware/vidc.b03
+etc/firmware/vidc.mdt
+etc/firmware/vidc_1080p.fw
+etc/firmware/vidcfw.elf
 
 # MSP firmware
 bin/msp430
@@ -206,23 +185,15 @@ etc/firmware/mspversion_p2.txt
 # NFC
 lib/hw/nfc.MSM8960.so
 
-# Perf
-bin/mpdecision
-
 # Postprocessing
 bin/mm-pp-daemon
-lib/libmm-abl.so
-lib/libmm-abl-oem.so
 lib/pp_proc_plugin.so
 
 # Qualcomm framework
-bin/irsc_util
-lib/libconfigdb.so
 lib/libdsi_netctrl.so
 lib/libdsprofile.so
 lib/libdss.so
 lib/libdsucsd.so
-lib/libdsutils.so
 lib/libidl.so
 lib/libqcci_legacy.so
 lib/libqdi.so
@@ -231,35 +202,21 @@ lib/libqmi.so
 lib/libqmi_client_qmux.so
 lib/libqmi_csvt_srvc.so
 lib/libqmiservices.so
-vendor/lib/libdiag.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
 
 # Radio
-bin/bootmodem
-bin/efsks
-bin/ks
-bin/netmgrd
-bin/qcks
-bin/qdumpd
 bin/qmi_motext_hook
 bin/qmiproxy
 bin/qmuxd
 bin/rmt_storage
 bin/sapd
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
-lib/libadropbox.so
-lib/libbabysit.so
 lib/libmdmcutback.so
 lib/libmotext_inf.so
 lib/libnetmgr.so
 lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
 
 # Sensors
 bin/sensors.qcom
@@ -269,8 +226,6 @@ lib/libmot_sensorlistener.so
 lib/libsensorhubservice_jni.so
 
 # Touch frimware
-etc/firmware/cyttsp_8064_mtp.hex
-etc/firmware/cyttsp_8960_cdp.hex
 etc/firmware/synaptics-s3310b-13061200-16a405-obakem-p1.tdat
 etc/firmware/synaptics-s3310b-13061201-16a405-obakem.tdat
 etc/firmware/synaptics-s3402-13040101-164656-ghost.tdat
