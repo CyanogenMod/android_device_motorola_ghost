@@ -207,6 +207,7 @@ vendor/lib/libqmi_common_so.so
 bin/qmi_motext_hook
 bin/qmiproxy
 bin/qmuxd
+bin/rild
 bin/rmt_storage
 bin/sapd
 -framework/qcnvitems.jar
@@ -214,6 +215,7 @@ bin/sapd
 lib/libmdmcutback.so
 lib/libmotext_inf.so
 lib/libnetmgr.so
+lib/libril.so
 lib/libril-qc-qmi-1.so
 
 # Sensors
