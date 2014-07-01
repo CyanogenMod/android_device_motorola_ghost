@@ -111,8 +111,6 @@ vendor/lib/mediadrm/libwvdrmengine.so
 # GPS
 lib/libgeofence.so
 lib/libloc_api_v02.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libulp2.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
