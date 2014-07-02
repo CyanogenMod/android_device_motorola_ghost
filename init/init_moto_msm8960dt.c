@@ -129,7 +129,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.data_netmgrd_mtu", "1472");
         property_set("persist.radio.0x9e_not_callname", "1");
         property_set("persist.radio.vrte_logic", "2");
-        property_set("rro.cdma.subscription", "0");
+        property_set("ro.cdma.subscription", "0");
         property_set("ro.config.svdo", "true");
         property_set("persist.radio.skip_data_check", "1");
         property_set("ro.mot.ignore_csim_appid", "true");
