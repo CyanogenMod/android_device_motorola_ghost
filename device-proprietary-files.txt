@@ -204,6 +204,7 @@ vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 
 # Radio
+bin/netmgrd
 bin/qmi_motext_hook
 bin/qmiproxy
 bin/qmuxd
