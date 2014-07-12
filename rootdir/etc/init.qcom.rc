@@ -503,9 +503,6 @@ on property:init.svc.sdcard=running
     wait /mnt/shell/emulated/0 600
     mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
 
-service charger /charger
-    class charger
-
 #Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1

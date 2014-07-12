@@ -69,6 +69,7 @@ PRODUCT_PACKAGES += \
 
 # Utilities
 PRODUCT_PACKAGES += \
+    charge_only_mode \
     mkfs.f2fs \
     fsck.f2fs \
     fibmap.f2fs
