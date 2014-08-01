@@ -241,6 +241,9 @@ bin/thermald
 # Misc
 vendor/lib/libalarmservice_jni.so
 
+# Moto
+bin/batt_health
+
 # xt1080
 xt1080/bin/ap_gain.bin
 xt1080/bin/ap_gain_mmul.bin
