@@ -13,48 +13,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
-# disable makefiles (the proper mechanism to control what gets
-# included in a build is to use PRODUCT_PACKAGES in a product
-# definition file).
-#
-
 # inherit from the proprietary version
 -include vendor/motorola/moto_msm8960dt/BoardConfigVendor.mk
 
+LOCAL_PATH := device/motorola/ghost
+
 BOARD_VENDOR := motorola-qcom
-
-# Platform
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
-TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOOTLOADER_BOARD_NAME := MSM8960
-TARGET_CPU_VARIANT := krait
-
--include device/motorola/qcom-common/BoardConfigCommon.mk
-
-LOCAL_PATH := device/motorola/moto_msm8960dt
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/moto_msm8960dt/init/init_moto_msm8960dt.c
 
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
-TARGET_QCOM_MEDIA_VARIANT := caf
-TARGET_USES_WCNSS_CTRL := true
+# Assert
+TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon,xt1080,obake_verizon,xt1080m,obake
 
-# Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8960dt-common
-TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := msm8960_mmi_selinux_defconfig
+# Platform
+TARGET_BOARD_PLATFORM := msm8960
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+TARGET_NO_BOOTLOADER := true
+
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
+# Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 vmalloc=400M androidboot.write_protect=0 zcache
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --dt $(LOCAL_PATH)/dt.img
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12884901888
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8960dt-common
+TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := msm8960_mmi_selinux_defconfig
 
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/prima
@@ -63,37 +58,155 @@ WLAN_MODULES:
 
 TARGET_KERNEL_MODULES += WLAN_MODULES
 
-# QCOM BSP
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
-
 # Audio
+AUDIO_FEATURE_DISABLED_FM := true
+BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
+BOARD_USES_SEPERATED_AUDIO_INPUT := true
+BOARD_USES_SEPERATED_VOICE_SPEAKER := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_USES_QCOM_COMPRESSED_AUDIO := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
+
+# Camera
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+
+# Display
+BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
+TARGET_QCOM_DISPLAY_VARIANT := caf
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+USE_OPENGL_RENDERER := true
 
 # GPS
 BOARD_HAVE_NEW_QC_GPS := true
 
-# Graphics
-TARGET_QCOM_DISPLAY_VARIANT := caf
-BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_moto_msm8960dt.c
+TARGET_NR_SVC_SUPP_GIDS := 28
+TARGET_UNIFIED_DEVICE := true
 
-# Custom relese tools for unified devices
-TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/moto_msm8960dt
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon,xt1080,obake_verizon,xt1080m,obake
+# Motorola
+TARGET_USES_MOTOROLA_LOG := true
+
+# Media
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_QCOM_MEDIA_VARIANT := caf
+
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1560281088
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12884901888
+
+# Power HAL
+TARGET_POWERHAL_VARIANT := cm
+
+# Qualcomm support
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_RECOVERY_SWIPE := true
 
-# TWRP
-DEVICE_RESOLUTION := 720x1280
-TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
-TW_MAX_BRIGHTNESS := 126
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+	$(LOCAL_PATH)/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	adbd.te \
+	app.te \
+	bluetooth_loader.te \
+	bridge.te \
+	camera.te \
+	device.te \
+	dhcp.te \
+	dnsmasq.te \
+	domain.te \
+	drmserver.te \
+	file_contexts \
+	file.te \
+	hostapd.te \
+	init_shell.te \
+	init.te \
+	libqc-opt.te \
+	mediaserver.te \
+	mpdecision.te \
+	netd.te \
+	netmgrd.te \
+	nfc.te \
+	property_contexts \
+	property.te \
+	qcom.te \
+	qmux.te \
+	radio.te \
+	rild.te \
+	rmt.te \
+	sdcard_internal.te \
+	sdcardd.te \
+	sensors.te \
+	shell.te \
+	surfaceflinger.te \
+	system.te \
+	tee.te \
+	te_macros \
+	thermald.te \
+	ueventd.te \
+	vold.te \
+	wpa_supplicant.te \
+	zygote.te
+
+ifneq ($(TARGET_BUILD_VARIANT),user)
+	BOARD_SEPOLICY_UNION += su.te
+endif
+
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+
+# Vold
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+BOARD_VOLD_MAX_PARTITIONS := 40
+
+# Wifi
+BOARD_HAS_QCOM_WLAN := true
+BOARD_HAS_QCOM_WLAN_SDK := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+TARGET_USES_WCNSS_CTRL := true
+WIFI_DRIVER_MODULE_NAME := "wlan"
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+WPA_SUPPLICANT_VERSION := VER_0_8_X
