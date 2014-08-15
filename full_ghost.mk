@@ -14,23 +14,15 @@
 # limitations under the License.
 #
 
-#
-# This file is the build configuration for a full Android
-# build for moto_msm8960dt hardware. This cleanly combines a set of
-# device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps). Except for a few implementation
-# details, it only fundamentally contains two inherit-product
-# lines, full and moto_msm8960dt, hence its name.
-#
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-# Inherit from moto_msm8960dt device
-$(call inherit-product, device/motorola/moto_msm8960dt/device_moto_msm8960dt.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := moto_msm8960dt
-PRODUCT_NAME := full_moto_msm8960dt
+# Inherit from ghost device
+$(call inherit-product, device/motorola/ghost/device.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := ghost
+PRODUCT_NAME := full_ghost
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := MOTOROLA MSM8960DT
+PRODUCT_MODEL := ghost
 PRODUCT_MANUFACTURER := motorola

@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/motorola/moto_msm8960dt/BoardConfigVendor.mk
+-include vendor/motorola/ghost/BoardConfigVendor.mk
 
 LOCAL_PATH := device/motorola/ghost
 
@@ -23,7 +23,7 @@ BOARD_VENDOR := motorola-qcom
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1030,obakem_verizon,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon,xt1080,obake_verizon,xt1080m,obake
+TARGET_OTA_ASSERT_DEVICE := xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -92,7 +92,7 @@ BOARD_HAVE_NEW_QC_GPS := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_moto_msm8960dt.c
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_ghost.c
 TARGET_NR_SVC_SUPP_GIDS := 28
 TARGET_UNIFIED_DEVICE := true
 

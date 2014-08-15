@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_moto_msm8960dt.mk
+    $(LOCAL_DIR)/full_ghost.mk
