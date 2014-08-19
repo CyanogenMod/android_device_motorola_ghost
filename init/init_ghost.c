@@ -153,5 +153,5 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
-    ERROR("Found device: %s radio id: %s carrier: %s Setting build properties for %s device\n", bootdevice, radio, carrier, devicename);
+    INFO("Found device: %s radio id: %s carrier: %s Setting build properties for %s device\n", bootdevice, radio, carrier, devicename);
 }
