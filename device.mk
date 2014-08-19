@@ -276,46 +276,43 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.recovery.qcom.rc \
-    init.target.rc \
-    ueventd.qcom.rc
-
-PRODUCT_PACKAGES += \
-    init.class_main.sh \
     init.crda.sh \
     init.qcom.bt.sh \
-    init.qcom.class_core.sh \
     init.qcom.coex.sh \
-    init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
     init.qcom.fm.sh \
     init.qcom.mdm_links.sh \
     init.qcom.modem_links.sh \
-    init.qcom.syspart_fixup.sh \
+    init.qcom.post_boot.sh \
     init.qcom.thermal_conf.sh \
-    init.qcom.usb.sh \
+    init.qcom.wifi.sh \
     moto_com.sh \
     mount_pds.sh
 
 PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.class_main.sh \
     init.mmi.boot.sh \
     init.mmi.touch.sh \
-    init.qcom.post_boot.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.rc \
     init.qcom.sh \
-    init.qcom.wifi.sh
-
-PRODUCT_PACKAGES += \
-    thermald-8960.conf \
-    thermald-ghost.conf \
-    thermal-engine-8226.conf
+    init.qcom.syspart_fixup.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    ueventd.qcom.rc
 
 # Support
 PRODUCT_PACKAGES += \
     libcurl \
     libxml2
+
+# Thermal
+PRODUCT_PACKAGES += \
+    thermald-ghost.conf
 
 # Torch
 PRODUCT_PACKAGES += \
