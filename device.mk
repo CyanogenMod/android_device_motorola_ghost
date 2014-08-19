@@ -296,7 +296,9 @@ PRODUCT_PACKAGES += \
     init.qcom.modem_links.sh \
     init.qcom.syspart_fixup.sh \
     init.qcom.thermal_conf.sh \
-    init.qcom.usb.sh
+    init.qcom.usb.sh \
+    moto_com.sh \
+    mount_pds.sh
 
 PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
@@ -309,12 +311,6 @@ PRODUCT_PACKAGES += \
     thermald-8960.conf \
     thermald-ghost.conf \
     thermal-engine-8226.conf
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/scripts/mount_pds.sh:system/bin/mount_pds.sh
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/moto_com.sh:system/bin/moto_com.sh
 
 # Support
 PRODUCT_PACKAGES += \

@@ -166,11 +166,11 @@ on post-fs
     chmod 755 /system/etc/init.qcom.modem_links.sh
     chmod 755 /system/etc/init.qcom.post_boot.sh
     chmod 755 /system/etc/init.qcom.sdio.sh
-    chmod 755 /system/bin/moto_com.sh
+    chmod 755 /system/etc/moto_com.sh
 
     # Mount PDS
     wait /dev/block/platform/msm_sdcc.1/by-name/pds
-    exec /system/bin/mount_pds.sh
+    exec /system/etc/mount_pds.sh
 
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro remount
 
@@ -422,7 +422,7 @@ on post-fs-data
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_vinmin
 
     start batt_health
-    exec /system/bin/sh /system/bin/moto_com.sh
+    exec /system/bin/sh /system/etc/moto_com.sh
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
