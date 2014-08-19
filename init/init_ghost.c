@@ -70,13 +70,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_verizon-user 4.4 13.11.1Q2.X-69-3 5 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:4.4/13.11.1Q2.X-69-3/5:user/release-keys");
-    } else if (ISMATCH(bootdevice, "obake-maxx")) {
-        /* xt1080 */
-        property_set("ro.product.device", "obake");
-        property_set("ro.product.model", "DROID MAXX");
-        property_set("ro.build.description", "obake_verizon-user 4.4 SU2-3 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/obake_verizon/obake:4.4/SU2-3/15:user/release-keys");
-        property_set(PROP_QEMU_NAVKEY, "1");
     } else if (ISMATCH(radio, "0x4")) {
         /* xt1056 */
         property_set("ro.product.device", "ghost_sprint");
