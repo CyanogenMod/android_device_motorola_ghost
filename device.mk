@@ -77,8 +77,8 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/config/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -116,11 +116,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/config/sap.conf:system/etc/sap.conf
+    $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -132,8 +132,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # Motorola
 PRODUCT_PACKAGES += \
@@ -149,9 +149,9 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/nfcee_access.xml:system/etc/nfcee_access.xml
+    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 else
-    PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/nfcee_access_debug.xml:system/etc/nfcee_access.xml
+    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nfcee_access.xml
 endif
 
 # OMX
@@ -230,12 +230,14 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     wcnss_service
 
-PRODUCT_PACKAGES += \
-    hostapd.accept \
-    hostapd_default.conf \
-    hostapd.deny \
-    p2p_supplicant_overlay.conf \
-    wpa_supplicant_overlay.conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/configs/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    $(LOCAL_PATH)/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv.bin \
