@@ -112,7 +112,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.ril.max.crit.qmi.fails", "4");
         property_set("ro.cdma.homesystem", "64,65,76,77,78,79,80,81,82,83");
         property_set("ro.mot.ignore_csim_appid", "true");
-        property_set("persist.radio.eons.enabled", "1");
         property_set("ro.cdma.nbpcd", "1");
         property_set("persist.radio.skip_data_check", "1");
         property_set("ro.cdma.home.operator.alpha", "Verizon");
