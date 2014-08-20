@@ -122,6 +122,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
+# Keylayout
+PRODUCT_PACKAGES += \
+    $(LOCAL_PATH)/keylayout/msp430sensorprocessor.kl:system/usr/keylayout/msp430sensorprocessor.kl
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8960
