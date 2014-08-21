@@ -239,3 +239,109 @@ vendor/lib/libalarmservice_jni.so
 
 # Moto
 bin/batt_health
+
+# Audio
+lib/libacdbloader.so
+lib/libalsautils.so
+lib/libaudioalsa.so
+
+# Bluetooth
+bin/btnvtool
+bin/hci_qcomm_init
+
+# DRM
+lib/libdrmdiag.so
+lib/libdrmfs.so
+lib/libdrmtime.so
+lib/libWVphoneAPI.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L1.so
+
+# DxHDCP firmware
+etc/firmware/dxhdcp2.b00
+etc/firmware/dxhdcp2.b01
+etc/firmware/dxhdcp2.b02
+etc/firmware/dxhdcp2.b03
+etc/firmware/dxhdcp2.mdt
+etc/DxHDCP.cfg
+etc/hdcp_8960.dat.enc
+lib/libDxHdcp.so
+
+# Graphics firmware
+etc/firmware/a225p5_pm4.fw
+etc/firmware/a225_pfp.fw
+etc/firmware/a225_pm4.fw
+etc/firmware/a300_pfp.fw
+etc/firmware/a300_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+
+# Media
+lib/libDivxDrm.so
+lib/libExtendedExtractor.so
+lib/libFileMux.so
+lib/libI420colorconvert.so
+lib/libSHIMDivxDrm.so
+lib/libgemini.so
+lib/libmercury.so
+lib/libmm-color-convertor.so
+lib/libmmosal.so
+lib/libOmxAacDec.so
+lib/libOmxAmrwbplusDec.so
+lib/libOmxEvrcDec.so
+lib/libOmxMux.so
+lib/libOmxQcelp13Dec.so
+lib/libOmxWmaDec.so
+
+# Moto
+bin/dbvc_atvc_property_set
+bin/hardware_revisions.sh
+bin/mount_ext4.sh
+bin/refuse
+
+# Perf
+bin/mpdecision
+lib/libqc-opt.so
+
+# Postprocessing
+lib/libmm-abl.so
+lib/libmm-abl-oem.so
+
+# Qualcomm framework
+bin/irsc_util
+lib/libconfigdb.so
+lib/libdsutils.so
+vendor/lib/libdiag.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+
+# Radio
+bin/bootmodem
+bin/efsks
+bin/ks
+bin/qcks
+bin/qdumpd
+bin/radish
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+lib/libadropbox.so
+lib/libbabysit.so
+lib/libril-qcril-hook-oem.so
+
+# Time services
+bin/time_daemon
+-lib/libtime_genoff.so
+
+# Touch firmware
+etc/firmware/cyttsp_8064_mtp.hex
+etc/firmware/cyttsp_8960_cdp.hex
+
+# Misc
+bin/bridgemgrd
+bin/ds_fmc_appd
+bin/ftmipcd
+bin/nl_listener
+bin/port-bridge
+lib/libxml.so
