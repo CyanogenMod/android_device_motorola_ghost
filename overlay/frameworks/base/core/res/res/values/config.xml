@@ -225,4 +225,7 @@
     <string name="config_perf_profile_prop">sys.perf.profile</string>
     <string name="config_perf_profile_default_entry">1</string>
 
+    <!-- Component name of the geofence services provider. -->
+    <string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string>
+
 </resources>

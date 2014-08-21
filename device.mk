@@ -110,14 +110,6 @@ PRODUCT_PACKAGES += \
     resize2fs \
     setup_fs
 
-# GPS
-PRODUCT_PACKAGES += \
-    gps.msm8960
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
