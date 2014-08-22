@@ -20,7 +20,7 @@ LOCAL_PATH := device/motorola/ghost
 
 BOARD_VENDOR := motorola-qcom
 
-TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,ghost,xt1060,ghost_verizon
