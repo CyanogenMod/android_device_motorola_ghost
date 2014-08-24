@@ -26,6 +26,10 @@ bin/hci_qcomm_init
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8960.so
 lib/libadsprpc.so
+lib/libAisAdapter.so
+lib/libAlAisLib.so
+lib/libAlAisTune.so
+lib/libAlAisWrap.so
 lib/libgemini.so
 lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
@@ -61,6 +65,13 @@ lib/libVdlFaceDetection.so
 lib/VdlData.dat
 
 # Chromatix
+lib/libchromatix_ais_ov10820_default_video.so
+lib/libchromatix_ais_ov10820_hfr_60fps.so
+lib/libchromatix_ais_ov10820_preview.so
+lib/libchromatix_ais_ov10820_zsl.so
+lib/libchromatix_ais_s5k5b3g_default_video.so
+lib/libchromatix_ais_s5k5b3g_preview.so
+lib/libchromatix_ais_s5k5b3g_zsl.so
 lib/libchromatix_imx074_default_video.so
 lib/libchromatix_imx074_preview.so
 lib/libchromatix_imx074_video_hd.so
@@ -70,8 +81,8 @@ lib/libchromatix_imx091_preview.so
 lib/libchromatix_imx091_video_hd.so
 lib/libchromatix_imx135_default_video.so
 lib/libchromatix_imx135_preview.so
-lib/libchromatix_imx135_video_hd.so
 lib/libchromatix_imx135_video_hdr.so
+lib/libchromatix_imx135_video_hd.so
 lib/libchromatix_imx135_zsl.so
 lib/libchromatix_mt9e013_default_video.so
 lib/libchromatix_mt9e013_preview.so
@@ -91,10 +102,17 @@ lib/libchromatix_ov8825_default_video.so
 lib/libchromatix_ov8825_preview.so
 lib/libchromatix_ov9726_default_video.so
 lib/libchromatix_ov9726_preview.so
+lib/libchromatix_qc3a_ov10820_default_video.so
+lib/libchromatix_qc3a_ov10820_hfr_60fps.so
+lib/libchromatix_qc3a_ov10820_preview.so
+lib/libchromatix_qc3a_ov10820_zsl.so
+lib/libchromatix_qc3a_s5k5b3g_default_video.so
+lib/libchromatix_qc3a_s5k5b3g_preview.so
+lib/libchromatix_qc3a_s5k5b3g_zsl.so
 lib/libchromatix_s5k3l1yx_default_video.so
+lib/libchromatix_s5k3l1yx_hfr_120fps.so
 lib/libchromatix_s5k3l1yx_hfr_60fps.so
 lib/libchromatix_s5k3l1yx_hfr_90fps.so
-lib/libchromatix_s5k3l1yx_hfr_120fps.so
 lib/libchromatix_s5k3l1yx_preview.so
 lib/libchromatix_s5k3l1yx_video_hd.so
 lib/libchromatix_s5k3l1yx_zsl.so
