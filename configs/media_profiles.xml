@@ -134,18 +134,6 @@
              channels="1" />
     </EncoderProfile>
 
-        <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="1200000"
-                   width="352"
-                   height="288"
-                   frameRate="30" />
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-<!--
     <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="6000000"
@@ -184,7 +172,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
--->
+
     <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="512000"
@@ -480,14 +468,14 @@
         minChannels="1" maxChannels="2" />
 
     <AudioEncoderCap name="heaac" enabled="true"
-        minBitRate="8000" maxBitRate="64000"
+        minBitRate="8000" maxBitRate="128000"
         minSampleRate="16000" maxSampleRate="48000"
-        minChannels="1" maxChannels="1" />
+        minChannels="1" maxChannels="2" />
 
     <AudioEncoderCap name="aaceld" enabled="true"
-        minBitRate="16000" maxBitRate="192000"
+        minBitRate="16000" maxBitRate="384000"
         minSampleRate="16000" maxSampleRate="48000"
-        minChannels="1" maxChannels="1" />
+        minChannels="1" maxChannels="2" />
 
     <AudioEncoderCap name="amrwb" enabled="true"
         minBitRate="6600" maxBitRate="23050"
