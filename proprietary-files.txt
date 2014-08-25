@@ -24,7 +24,7 @@ bin/hci_qcomm_init
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.msm8960.so
+lib/hw/camera.msm8960.so:lib/hw/camera.vendor.msm8960.so
 lib/libadsprpc.so
 lib/libAisAdapter.so
 lib/libAlAisLib.so
