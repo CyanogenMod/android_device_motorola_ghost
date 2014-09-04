@@ -27,6 +27,9 @@ ro.qualcomm.bluetooth.nap=true
 ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
+# Camera
+camera2.portability.force_api=1
+
 # Display
 debug.composition.type=c2d
 debug.mdpcomp.logs=0
