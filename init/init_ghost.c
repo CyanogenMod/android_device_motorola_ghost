@@ -70,6 +70,12 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_verizon-user 4.4 13.11.1Q2.X-69-3 5 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:4.4/13.11.1Q2.X-69-3/5:user/release-keys");
+    } else if (ISMATCH(radio, "0x3")) {
+        /* xt1052 */
+        property_set("ro.product.device", "ghost");
+        property_set("ro.product.model", "Moto X");
+        property_set("ro.build.description", "ghost_retde-user 4.4.4 KXA21.12-L1.26 54 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_retde/ghost:4.4.4/KXA21.12-L1.26/54:user/release-keys");
     } else if (ISMATCH(radio, "0x4")) {
         /* xt1056 */
         property_set("ro.product.device", "ghost_sprint");
