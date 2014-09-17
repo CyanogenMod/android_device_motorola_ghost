@@ -36,7 +36,33 @@
 
 #include "init_msm.h"
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+static void gsm_properties()
+{
+    property_set("ro.telephony.default_network", "9");
+    property_set("telephony.lteOnGsmDevice", "1");
+}
+
+static void cdma_properties(char default_sub[], char op_numeric[],
+        char op_alpha[])
+{
+    property_set("ro.telephony.default_cdma_sub", default_sub);
+    property_set("ro.cdma.home.operator.numeric", op_numeric);
+    property_set("ro.cdma.home.operator.alpha", op_alpha);
+
+    property_set("persist.radio.0x9e_not_callname", "1");
+    property_set("persist.ril.max.crit.qmi.fails", "4");
+
+    property_set("ril.subscription.types", "NV,RUIM");
+    property_set("ro.cdma.subscribe_on_ruim_ready", "true");
+    property_set("ro.mot.ignore_csim_appid", "true");
+    property_set("ro.ril.svdo", "true");
+    property_set("ro.telephony.default_network", "10");
+    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("telephony.rilV7NeedCDMALTEPhone", "true");
+}
+
+void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
+        char *board_type)
 {
     char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
@@ -63,91 +89,49 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_retail-user 4.4.3 KXA21.12-L1.21 23 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4.3/KXA21.12-L1.21/23:user/release-keys");
-        property_set("telephony.lteOnGsmDevice", "1");
+        gsm_properties();
     } else if ((ISMATCH(radio, "0x2")) && (ISMATCH(bootdevice, "ghost"))) {
         /* xt1060 */
         property_set("ro.product.device", "ghost_verizon");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_verizon-user 4.4 13.11.1Q2.X-69-3 5 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:4.4/13.11.1Q2.X-69-3/5:user/release-keys");
+
+        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
+        property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
+        property_set("ro.gsm.2nd_data_retry_config", "max_retries=1,15000");
+        property_set("ro.com.google.clientidbase.ms", "android-verizon");
+        property_set("ro.com.google.clientidbase.am", "android-verizon");
+        property_set("ro.com.google.clientidbase.yt", "android-verizon");
+        cdma_properties("0", "311480", "Verizon");
     } else if (ISMATCH(radio, "0x3")) {
         /* xt1052 */
         property_set("ro.product.device", "ghost");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_retde-user 4.4.4 KXA21.12-L1.26 54 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retde/ghost:4.4.4/KXA21.12-L1.26/54:user/release-keys");
+        gsm_properties();
     } else if (ISMATCH(radio, "0x4")) {
         /* xt1056 */
         property_set("ro.product.device", "ghost_sprint");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_sprint-user 4.4 13.11.3Q2.X-69-3-8 12 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_sprint/ghost:4.4/13.11.3Q2.X-69-3-8/12:user/release-keys");
+        cdma_properties("1", "310120", "Sprint");
     } else if (ISMATCH(radio, "0x5")) {
         /* xt1055 */
         property_set("ro.product.device", "ghost_usc");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_usc-user 4.4 13.11.3Q2.X-69-3-2 11 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_usc/ghost:4.4/13.11.3Q2.X-69-3-2/11:user/release-keys");
+        cdma_properties("0", "311580", "U.S.Cellular");
     } else if (ISMATCH(radio, "0x6")) {
         /* xt1053 */
         property_set("ro.product.device", "ghost_retail");
         property_set("ro.product.model", "Moto X");
         property_set("ro.build.description", "ghost_retail-user 4.4.3 KXA21.12-L1.21 23 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4.3/KXA21.12-L1.21/23:user/release-keys");
-        property_set("telephony.lteOnGsmDevice", "1");
-    }
-
-    if (ISMATCH(carrier, "vzw")) {
-        property_set("ro.mot.build.customerid ", "verizon");
-        property_set("ro.config.svdo", "true");
-        property_set("ro.cdma.home.operator.isnan", "1");
-        property_set("ro.telephony.gsm-routes-us-smsc", "1");
-        property_set("ro.cdma.otaspnumschema","SELC,1,80,99");
-        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
-        property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
-        property_set("ro.gsm.2nd_data_retry_config", "max_retries=1,15000");
-        property_set("persist.radio.vrte_logic", "2");
-        property_set("persist.radio.0x9e_not_callname", "1");
-        property_set("persist.ril.max.crit.qmi.fails", "4");
-        property_set("ro.cdma.homesystem", "64,65,76,77,78,79,80,81,82,83");
-        property_set("ro.mot.ignore_csim_appid", "true");
-        property_set("ro.cdma.nbpcd", "1");
-        property_set("persist.radio.skip_data_check", "1");
-        property_set("ro.cdma.home.operator.alpha", "Verizon");
-        property_set("ro.cdma.home.operator.numeric", "310004");
-        property_set("telephony.rilV7NeedCDMALTEPhone", "true");
-        property_set("ro.com.google.clientidbase.ms", "android-verizon");
-        property_set("ro.com.google.clientidbase.am", "android-verizon");
-        property_set("ro.com.google.clientidbase.yt", "android-verizon");
-    } else if (ISMATCH(carrier, "usc")) {
-        property_set("ro.cdma.nbpcd", "1");
-        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
-        property_set("ro.cdma.international.eri", "2,74,124,125,126,157,158,159,193,194,195,196,197,198,228,229,230,231,232,233,234,235");
-        property_set("ro.cdma.home.operator.isnan", "1");
-        property_set("persist.data_netmgrd_mtu", "1472");
-        property_set("persist.radio.0x9e_not_callname", "1");
-        property_set("persist.radio.vrte_logic", "2");
-        property_set("ro.cdma.subscription", "0");
-        property_set("ro.config.svdo", "true");
-        property_set("persist.radio.skip_data_check", "1");
-        property_set("ro.mot.ignore_csim_appid", "true");
-        property_set("telephony.rilV7NeedCDMALTEPhone", "true");
-    } else if (ISMATCH(carrier, "sprint")) {
-        property_set("ro.cdma.nbpcd", "0");
-        property_set("ro.cdma.international.eri", "2,74,124,125,126,157,158,159,193,194,195,196,197,198,228,229,230,231,232,233,234,235");
-        property_set("persist.radio.vrte_logic", "2");
-        property_set("persist.radio.skip_data_check", "1");
-        property_set("ro.cdma.homesystem", "64,65,76,77,78,79,80,81,82,83");
-        property_set("persist.data_netmgrd_mtu", "1422");
-        property_set("persist.radio.0x9e_not_callname", "1");
-        property_set("ro.mot.ignore_csim_appid", "true");
-        property_set("ro.config.svdo", "true");
-        property_set("ro.config.svlte1x", "true");
-        property_set("ro.telephony.gsm-routes-us-smsc", "1");
-        property_set("ro.cdma.home.operator.isnan", "1");
-        property_set("ro.cdma.otaspnumschema", "SELC,1,80,99");
-        property_set("persist.ril.max.crit.qmi.fails", "4");
-        property_set("telephony.rilV7NeedCDMALTEPhone", "true");
+        gsm_properties();
     }
 
     property_get("ro.product.device", device);
