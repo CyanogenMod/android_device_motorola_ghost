@@ -240,9 +240,6 @@ etc/firmware/mspversion_p0.txt
 etc/firmware/mspversion_p1.txt
 etc/firmware/mspversion_p2.txt
 
-# NFC
-lib/hw/nfc.MSM8960.so:lib/hw/nfc.msm8960.so
-
 # Postprocessing
 bin/mm-pp-daemon
 lib/libmm-abl.so

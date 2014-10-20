@@ -144,6 +144,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
+    nfc.msm8960 \
     Nfc \
     Tag \
     com.android.nfc_extras
