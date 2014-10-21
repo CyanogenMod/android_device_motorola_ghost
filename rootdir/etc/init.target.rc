@@ -590,12 +590,6 @@ service bootmodem /system/bin/bootmodem
     disabled
     oneshot
 
-service wcnss-service /system/bin/wcnss_service
-    class main
-    user system
-    group system wifi qcom_diag radio
-    oneshot
-
 service mmi-boot-sh /system/bin/logwrapper /system/bin/sh /init.mmi.boot.sh
     class core
     user root
