@@ -760,6 +760,12 @@ service time_daemon /system/bin/time_daemon
     user root
     group root
 
+service wcnss_service /system/bin/wcnss_service
+    class late_start
+    user root
+    group system wifi
+    oneshot
+
 service wifi-crda /system/bin/sh /system/etc/init.crda.sh
     class late_start
     user root
