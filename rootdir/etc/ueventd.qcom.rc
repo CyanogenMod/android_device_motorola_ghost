@@ -221,6 +221,7 @@
 /dev/sec                  0660   system     drmrpc
 
 # HOB and DHOB partition permission
+/dev/mot_hob_ram          0660   radio      radio
 /dev/block/mmcblk0p20     0660   root       radio
 /dev/block/mmcblk0p21     0660   root       radio
 
