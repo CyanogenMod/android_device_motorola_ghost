@@ -30,7 +30,7 @@ ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
 # Display
-debug.composition.type=dyn
+debug.composition.type=c2d
 debug.mdpcomp.logs=0
 debug.sf.hw=1
 persist.hwc.mdpcomp.enable=true
@@ -65,6 +65,7 @@ rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 
 ro.modem.no_wdog_chk=1
+ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=10
 ro.use_data_netmgrd=true
 
@@ -75,6 +76,7 @@ ro.cwm.forbid_format=/fsg,/firmware,/persist,/modem,/boot
 persist.sys.qc.sub.rdump.max=20
 persist.sys.qc.sub.rdump.on=1
 persist.sys.qc.sub.rstrtlvl=3
+persist.sys.ssr.restart_level=1
 
 # Time
 persist.timed.enable=true
@@ -88,3 +90,6 @@ ro.usb.bpt=0x2e28
 ro.usb.bpt_adb=0x2e29
 ro.usb.bpteth=0x2e2a
 ro.usb.bpteth_adb=0x2e2b
+
+# WLAN
+wifi.interface=wlan0
