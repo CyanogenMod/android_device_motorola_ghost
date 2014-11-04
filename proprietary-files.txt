@@ -292,5 +292,7 @@ etc/firmware/synaptics-s3402-13040101-164656-ghost-p1a.tdat
 etc/firmware/synaptics-s3402b-13050201-167746-ghost.tdat
 
 # Time services
+-app/TimeService.apk
 bin/time_daemon
 -lib/libtime_genoff.so
+lib/libTimeService.so
