@@ -183,9 +183,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 	BOARD_SEPOLICY_UNION += su.te
 endif
 
-# Time services
-BOARD_USES_QC_TIME_SERVICES := true
-
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
