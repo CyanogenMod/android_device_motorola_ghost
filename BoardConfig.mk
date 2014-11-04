@@ -51,13 +51,6 @@ TARGET_KERNEL_SOURCE := kernel/motorola/ghost
 TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := msm8960_mmi_selinux_defconfig
 
-WLAN_MODULES:
-	mkdir -p $(KERNEL_MODULES_OUT)/prima
-	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
-	ln -sf /system/lib/modules/prima/prima_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
-
-TARGET_KERNEL_MODULES += WLAN_MODULES
-
 # Audio
 AUDIO_FEATURE_DISABLED_FM := true
 BOARD_USES_ALSA_AUDIO := true
@@ -199,6 +192,4 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-WIFI_DRIVER_MODULE_NAME := "wlan"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
