@@ -61,8 +61,7 @@ static void cdma_properties(char default_sub[], char op_numeric[],
     property_set("telephony.rilV7NeedCDMALTEPhone", "true");
 }
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
-        char *board_type)
+void vendor_load_properties()
 {
     char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
@@ -71,10 +70,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
     char bootdevice[PROP_VALUE_MAX];
     char devicename[PROP_VALUE_MAX];
     int rc;
-
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
 
     rc = property_get("ro.board.platform", platform);
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
