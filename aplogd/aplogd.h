@@ -43,7 +43,6 @@
 
 #ifndef _APLOGD_H_
 #define _APLOGD_H_
-#define LOG_TAG				"aplogd"
 #define MAX_PATH_LEN                    255
 #define APLOGD_LOGFILE_PATH_LEN     	32
 #define APLOGD_OLD_FILE_EXT         "backup"
