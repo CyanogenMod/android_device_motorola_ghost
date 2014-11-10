@@ -77,9 +77,6 @@ BLUETOOTH_HCI_USE_MCT := true
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Classpath
-PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
-
 # Display
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -91,7 +88,7 @@ USE_OPENGL_RENDERER := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_ghost.c
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/ghost/init/init_ghost.c
 TARGET_NR_SVC_SUPP_GIDS := 28
 TARGET_UNIFIED_DEVICE := true
 
