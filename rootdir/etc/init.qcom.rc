@@ -278,7 +278,7 @@ on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
-    exec /system/bin/sh /system/etc/init.qcom.wifi.sh
+    exec /system/bin/sh /system/etc/init.qcom.wifi.sh ${ro.board.platform} ${ro.serialno}
 
 on boot
     # mount debugfs for systrace
@@ -689,12 +689,6 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
-
-service wcnss_service /system/bin/wcnss_service
-    class late_start
-    user root
-    group system wifi
-    oneshot
 
 service wifi-crda /system/bin/sh /system/etc/init.crda.sh
     class late_start
