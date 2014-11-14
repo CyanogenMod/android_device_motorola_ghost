@@ -87,6 +87,7 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_ghost
 TARGET_NR_SVC_SUPP_GIDS := 28
@@ -111,6 +112,9 @@ TARGET_POWERHAL_VARIANT := cm
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
+
+# mmap
+BOARD_USES_LEGACY_MMAP := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
