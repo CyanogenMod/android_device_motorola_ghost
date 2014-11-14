@@ -171,5 +171,8 @@
          performance profiles  -->
     <string name="config_perf_profile_default_entry">1</string>
 
+    <!-- Screen brightness when dozing -->
+    <integer name="config_screenBrightnessDoze">30</integer>
+
 </resources>
 
