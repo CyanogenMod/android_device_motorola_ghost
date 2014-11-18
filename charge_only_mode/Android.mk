@@ -20,6 +20,7 @@ LOCAL_C_INCLUDES := external/zlib
 
 LOCAL_CFLAGS := -I$(LOCAL_PATH)/assets
 
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := charge_only_mode
 
