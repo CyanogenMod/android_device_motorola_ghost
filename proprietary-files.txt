@@ -138,9 +138,9 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # GPS
--app/com.qualcomm.location.apk
--app/com.qualcomm.services.location.apk
--app/MotGeoFenceSvc.apk
+-app/com.qualcomm.location/com.qualcomm.location.apk
+-app/com.qualcomm.services.location/com.qualcomm.services.location.apk
+-app/MotGeoFenceSvc/MotGeoFenceSvc.apk
 etc/permissions/com.qualcomm.location.xml
 etc/gps.conf
 etc/izat.conf
@@ -292,7 +292,7 @@ etc/firmware/synaptics-s3402-13040101-164656-ghost-p1a.tdat
 etc/firmware/synaptics-s3402b-13050201-167746-ghost.tdat
 
 # Time services
--app/TimeService.apk
+-app/TimeService/TimeService.apk
 bin/time_daemon
 -lib/libtime_genoff.so
 lib/libTimeService.so
