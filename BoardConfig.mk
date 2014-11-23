@@ -90,6 +90,9 @@ USE_OPENGL_RENDERER := true
 # Flags
 BOARD_USES_LEGACY_MMAP := true
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_ghost.c
