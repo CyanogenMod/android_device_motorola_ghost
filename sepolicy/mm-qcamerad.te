@@ -1,0 +1,8 @@
+# Create front and back camera sockets (/data/cam_socket[01])
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
+allow mm-qcamerad audio_device:chr_file rw_file_perms;
+allow mm-qcamerad audio_device:dir r_dir_perms;
+allow mm-qcamerad camera_socket:chr_file rw_file_perms;
+allow mm-qcamerad graphics_device:chr_file { read write ioctl open };
+allow mm-qcamerad socket_device:sock_file w_file_perms;
+allow mm-qcamerad system_data_file:sock_file create_file_perms;
