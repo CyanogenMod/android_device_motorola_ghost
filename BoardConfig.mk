@@ -129,6 +129,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
