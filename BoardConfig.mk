@@ -134,6 +134,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_SEPOLICY_DIRS += \
+    $(LOCAL_PATH)/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    keystore.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    system_server.te \
+    ueventd.te
+
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
