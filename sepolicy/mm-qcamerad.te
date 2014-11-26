@@ -1,0 +1,4 @@
+allow mm-qcamerad audio_device:chr_file { read write ioctl open };
+allow mm-qcamerad device:chr_file { read write ioctl open };
+allow mm-qcamerad graphics_device:chr_file { read write ioctl open };
+allow mm-qcamerad system_data_file:sock_file { create unlink };
