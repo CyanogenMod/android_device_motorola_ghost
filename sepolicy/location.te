@@ -1,0 +1,7 @@
+allow location location_data_file:fifo_file rw_file_perms;
+allow location system_data_file:dir w_dir_perms;
+allow location system_data_file:fifo_file create_file_perms;
+type_transition location system_data_file:file location_data_file;
+allow location system_server:unix_stream_socket { read write };
+
+binder_call(location, system_server)

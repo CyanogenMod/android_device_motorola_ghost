@@ -1,0 +1,4 @@
+allow init cid_block_device:blk_file create_file_perms;
+allow init clogo_block_device:blk_file create_file_perms;
+allow init hob_block_device:blk_file create_file_perms;
+allow init utags_block_device:blk_file create_file_perms;
