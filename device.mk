@@ -67,7 +67,6 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8960 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8960 \
     libaudio-resampler
 
 PRODUCT_PACKAGES += \
