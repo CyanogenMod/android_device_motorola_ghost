@@ -1,5 +1,4 @@
 # Audio
-af.resampler.quality=255
 lpa.decode=true
 media.aac_51_output_enabled=true
 
