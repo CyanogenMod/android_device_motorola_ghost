@@ -105,10 +105,6 @@ on fs
     setprop ro.crypto.fuse_sdcard true
 
 on post-fs
-    restorecon /data/media /data/media/0 /data/media/legacy /data/media/obb
-    restorecon_recursive /data/misc/wifi
-    restorecon_recursive /data/hostapd
-
     # Link thermald
     symlink /etc/thermald-ghost.conf /dev/thermald.conf
 
