@@ -96,6 +96,10 @@ on fs
     exec /system/bin/chown -L root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
     exec /system/bin/chown -L root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
 
+    # Set correct permissions for UTAGS
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/utags
+    exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
+
     restorecon_recursive /persist
 
     setprop ro.crypto.fuse_sdcard true
@@ -205,10 +209,6 @@ on post-fs-data
 
     # Create folder for native & kernel to write to DropBox
     mkdir /data/system/dropbox-add 0730 system diag
-
-    # Set correct permissions for UTAGS
-    exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
-    exec /system/bin/chmod -L 0660 /dev/block/platform/msm_sdcc.1/by-name/utags
 
     # backup directory for omadm
     mkdir /pds/public/omadm 0700 radio radio
