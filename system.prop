@@ -1,6 +1,4 @@
 # Audio
-lpa.decode=true
-
 persist.audio.fluence.mode=endfire
 persist.audio.handset.mic=digital
 persist.audio.vr.enable=false
