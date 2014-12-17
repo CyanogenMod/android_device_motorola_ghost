@@ -71,9 +71,6 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=10
 ro.use_data_netmgrd=true
 
-# Recovery
-ro.cwm.forbid_format=/fsg,/firmware,/persist,/modem,/boot
-
 # SSR
 persist.sys.qc.sub.rdump.max=20
 persist.sys.qc.sub.rdump.on=1
