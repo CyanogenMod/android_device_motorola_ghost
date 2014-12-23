@@ -143,11 +143,13 @@ BOARD_SEPOLICY_UNION += \
     device.te \
     file_contexts \
     file.te \
-    init_shell.te \
+    hw_revs.te \
     init.te \
     keystore.te \
     location.te \
     mediaserver.te \
+    mmi-boot-sh.te \
+    mmi-touch-sh.te \
     mm-pp-daemon.te \
     mm-qcamerad.te \
     mpdecision.te \

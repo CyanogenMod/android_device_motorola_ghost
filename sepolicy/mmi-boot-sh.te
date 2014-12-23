@@ -1,0 +1,15 @@
+type mmi-boot-sh, domain;
+type mmi-boot-sh_exec, exec_type, file_type;
+init_daemon_domain(mmi-boot-sh)
+
+allow mmi-boot-sh block_device:dir search;
+allow mmi-boot-sh mmi-boot-sh_prop:property_service set;
+allow mmi-boot-sh pds_file:dir search;
+allow mmi-boot-sh pds_file:file { open read };
+allow mmi-boot-sh proc_mmi-boot-sh:dir search;
+allow mmi-boot-sh proc_mmi-boot-sh:file { open read write };
+allow mmi-boot-sh shell_exec:file read;
+allow mmi-boot-sh self:capability { dac_override sys_module };
+allow mmi-boot-sh system_file:file execute_no_trans;
+allow mmi-boot-sh utags_block_device:blk_file { open read };
+unix_socket_connect(mmi-boot-sh, property, init)

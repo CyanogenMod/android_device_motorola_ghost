@@ -1,0 +1,6 @@
+type mmi-touch-sh, domain;
+type mmi-touch-sh_exec, exec_type, file_type;
+init_daemon_domain(mmi-touch-sh)
+
+allow mmi-touch-sh shell_exec:file read;
+allow mmi-touch-sh system_file:file execute_no_trans;
