@@ -265,13 +265,13 @@ on post-fs-data
     chown mot_pwric mot_pwric /sys/devices/platform/msm_ssbi.0/pm8921-core/pm8921-charger/force_chg_vinmin
 
     start batt_health
-    exec /system/bin/sh /system/etc/moto_com.sh
+    exec /system/bin/moto_com.sh
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
-    exec /system/bin/sh /system/etc/init.qcom.wifi.sh ${ro.board.platform} ${ro.serialno}
+    exec /system/bin/init.qcom.wifi.sh ${ro.board.platform} ${ro.serialno}
 
 on boot
     # mount debugfs for systrace
@@ -521,7 +521,7 @@ on property:bluetooth.isEnabled=true
     start btwlancoex
     write /sys/class/bluetooth/hci0/idle_timeout 7000
 
-service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
+service btwlancoex /system/bin/init.qcom.coex.sh
     user bluetooth
     group bluetooth net_bt_admin inet net_admin net_raw
     oneshot
@@ -530,7 +530,7 @@ service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
 on property:vold.decrypt=trigger_restart_framework
     start config_bluetooth
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh
+service config_bluetooth /system/bin/init.qcom.bt.sh
     class core
     user root
     oneshot
@@ -552,7 +552,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
+service mmi-boot-sh /system/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
@@ -568,7 +568,7 @@ service mmi-ril-daemon /system/bin/rild
 on property:sys.boot_completed=1
     start mmi-touch-sh
 
-service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
+service mmi-touch-sh /system/bin/init.mmi.touch.sh
     user root
     oneshot
     disabled
@@ -667,7 +667,7 @@ service time_daemon /system/bin/time_daemon
     user root
     group root
 
-service wifi-crda /system/bin/sh /system/etc/init.crda.sh
+service wifi-crda /system/bin/init.crda.sh
     class late_start
     user root
     oneshot
