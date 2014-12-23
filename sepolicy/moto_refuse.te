@@ -1,0 +1,10 @@
+type moto_refuse, domain;
+type moto_refuse_exec, exec_type, file_type;
+init_daemon_domain(moto_refuse)
+
+allow moto_refuse media_rw_data_file:dir search;
+allow moto_refuse moto_refuse_data_file:file { open read write };
+# refuse requires mknod to /dev, which cannot be granted
+#allow moto_refuse device:dir write;
+#allow moto_refuse self:capability { dac_override mknod };
+allow moto_refuse self:capability { dac_override };

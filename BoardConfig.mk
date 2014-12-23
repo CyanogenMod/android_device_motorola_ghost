@@ -135,6 +135,35 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SEPOLICY_DIRS += \
     device/motorola/ghost/sepolicy
 
+BOARD_SEPOLICY_UNION += \
+    adspd.te \
+    atvc.te \
+    batt_health.te \
+    bootmodem.te \
+    device.te \
+    file_contexts \
+    file.te \
+    hw_revs.te \
+    init.te \
+    keystore.te \
+    location.te \
+    mediaserver.te \
+    mmi-boot-sh.te \
+    mmi-touch-sh.te \
+    mm-pp-daemon.te \
+    mm-qcamerad.te \
+    moto_refuse.te \
+    mpdecision.te \
+    msp430.te \
+    platform_app.te \
+    property_contexts \
+    property.te \
+    qdumpd.te \
+    rmt_storage.te \
+    system_app.te \
+    thermal-engine.te \
+    ueventd.te
+
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
