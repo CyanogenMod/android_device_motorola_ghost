@@ -3,6 +3,9 @@
 /system/bin/batt_health             u:object_r:batt_health_exec:s0
 /system/bin/bootmodem               u:object_r:bootmodem_exec:s0
 /system/bin/dbvc_atvc_property_set  u:object_r:atvc_exec:s0
+/system/bin/hardware_revisions.sh   u:object_r:hw_revs_exec:s0
+/system/bin/init.mmi.boot.sh        u:object_r:mmi-boot-sh_exec:s0
+/system/bin/init.mmi.touch.sh       u:object_r:mmi-touch-sh_exec:s0
 /system/bin/msp430                  u:object_r:msp430_exec:s0
 /system/bin/qdumpd                  u:object_r:qdumpd_exec:s0
 
@@ -17,6 +20,7 @@
 /dev/gemini.*                       u:object_r:camera_device:s0
 
 # Motorola services
+/data/hardware_revisions(/.*)?                                                      u:object_r:hw_revs_data_file:s0
 /data/power_supply_logger(/.*)?                                                     u:object_r:batt_health_data_file:s0
 /dev/ttyHS3                                                                         u:object_r:adspd_device:s0
 /sys/devices/801000.gpio/gpio/gpio15/value                                          u:object_r:sysfs_adspd:s0

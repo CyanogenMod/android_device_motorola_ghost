@@ -1,2 +1,6 @@
 # Motorola service properties
+hw.revision                 u:object_r:mmi-boot-sh_prop:s0
+manufacturedate             u:object_r:mmi-boot-sh_prop:s0
+mot.cust_md                 u:object_r:mmi-boot-sh_prop:s0
+mot.iccid                   u:object_r:mmi-boot-sh_prop:s0
 persist.atvc                u:object_r:atvc_prop:s0
