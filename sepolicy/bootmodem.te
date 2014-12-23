@@ -1,0 +1,5 @@
+type bootmodem, domain;
+type bootmodem_exec, exec_type, file_type;
+init_daemon_domain(bootmodem)
+
+allow bootmodem self:socket create;
