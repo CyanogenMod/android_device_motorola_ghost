@@ -12,7 +12,6 @@
 
 # GPS
 /data/misc/gpsone_d(/.*)?           u:object_r:location_data_file:s0
-/data/misc/gsiff_ctrl_q             u:object_r:location_data_file:s0
 
 # JPEG engine
 /dev/gemini.*                       u:object_r:camera_device:s0
