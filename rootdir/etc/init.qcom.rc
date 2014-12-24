@@ -541,18 +541,18 @@ service hostapd /system/bin/hostapd /data/hostapd/hostapd.conf
     oneshot
     disabled
 
-service hw_revs /system/bin/logwrapper /system/bin/hardware_revisions.sh
+service hw_revs /system/bin/hardware_revisions.sh
     class main
     user system
     group system
     oneshot
 
-service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
 
-service mmi-boot-sh /system/bin/logwrapper /system/bin/sh /init.mmi.boot.sh
+service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     class core
     user root
     oneshot
@@ -568,7 +568,7 @@ service mmi-ril-daemon /system/bin/rild
 on property:sys.boot_completed=1
     start mmi-touch-sh
 
-service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh
+service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     user root
     oneshot
     disabled
@@ -674,7 +674,7 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
     disabled
 
 # WPA
-service p2p_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
+service p2p_supplicant /system/bin/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
