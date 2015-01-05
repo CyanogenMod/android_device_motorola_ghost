@@ -58,7 +58,6 @@ on init
     mkdir /storage/emulated 0555 root root
 
     # External storage directories
-    mkdir /storage/emulated/legacy 0555 root root
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
     mkdir /storage/usbdisk 0700 root root
 
