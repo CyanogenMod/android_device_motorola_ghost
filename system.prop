@@ -5,6 +5,8 @@ persist.audio.fluence.mode=endfire
 persist.audio.handset.mic=digital
 persist.audio.vr.enable=false
 
+qcom.hw.aac.encoder=true
+
 ro.qc.sdk.audio.fluencetype=fluence
 ro.qc.sdk.audio.ssr=false
 
