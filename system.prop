@@ -42,7 +42,7 @@ ro.qc.sdk.izat.premium.enabled=0
 ro.qc.sdk.izat.service_mask=0x4
 
 # Media
-media.stagefright.use-awesome=true
+persist.sys.media.use-awesome=true
 
 # NITZ
 persist.rild.nitz_plmn=
