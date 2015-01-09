@@ -157,6 +157,7 @@ BOARD_SEPOLICY_UNION += \
     property.te \
     qdumpd.te \
     rmt_storage.te \
+    servicemanager.te \
     system_app.te \
     thermal-engine.te \
     ueventd.te
