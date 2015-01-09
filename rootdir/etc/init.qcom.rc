@@ -36,6 +36,10 @@ on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
+    # KSM
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
+
     # Create firmware mount point
     mkdir /firmware 0771 system system
 
