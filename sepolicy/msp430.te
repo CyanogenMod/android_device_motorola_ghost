@@ -1,5 +1,0 @@
-type msp430, domain;
-type msp430_exec, exec_type, file_type;
-init_daemon_domain(msp430)
-
-allow msp430 sensors_device:chr_file { open write ioctl };

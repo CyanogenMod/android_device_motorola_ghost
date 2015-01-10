@@ -90,7 +90,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
         property_set("ro.build.description", "ghost_retail-user 4.4.3 KXA21.12-L1.21 23 release-keys");
         property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4.3/KXA21.12-L1.21/23:user/release-keys");
         gsm_properties();
-    } else if ((ISMATCH(radio, "0x2")) && (ISMATCH(bootdevice, "ghost"))) {
+    } else if (ISMATCH(radio, "0x2")) {
         /* xt1060 */
         property_set("ro.product.device", "ghost_verizon");
         property_set("ro.product.model", "Moto X");

@@ -1,4 +1,0 @@
-allow mm-qcamerad graphics_device:dir search;
-allow mm-qcamerad graphics_device:chr_file { open read write ioctl };
-allow mm-qcamerad system_server:unix_stream_socket read;
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
