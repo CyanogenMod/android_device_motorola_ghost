@@ -1,5 +1,0 @@
-typeattribute rmt_storage rmt_placeholder;
-allow rmt_storage firmware_file:dir search;
-allow rmt_storage firmware_file:file { open read };
-allow rmt_storage kmem_device:chr_file { open read write };
-allow rmt_storage self:capability sys_rawio;
