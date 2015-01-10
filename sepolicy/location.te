@@ -1,3 +1,0 @@
-allow location system_server:unix_stream_socket { read write };
-binder_call(location, system_server)
-type_transition location system_data_file:file location_data_file;

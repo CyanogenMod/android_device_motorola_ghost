@@ -268,7 +268,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "Ghost lights Module",
+    .name = "Ghost Lights Module",
     .author = "razrqcom-dev-team, Google, Inc.",
     .methods = &lights_module_methods,
 };

@@ -1,3 +1,0 @@
-allow platform_app location_data_file:dir { write remove_name search add_name };
-allow platform_app location_data_file:sock_file { create unlink setattr };
-allow platform_app time_daemon:unix_stream_socket connectto;

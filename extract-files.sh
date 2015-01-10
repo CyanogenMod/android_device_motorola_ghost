@@ -53,4 +53,8 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
   fi
 done
 
+cd ../msm8960dt-common
+./extract-files.sh $@
+
+cd ../$DEVICE
 ./setup-makefiles.sh

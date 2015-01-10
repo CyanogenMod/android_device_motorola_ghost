@@ -1,5 +1,0 @@
-type qdumpd, domain;
-type qdumpd_exec, exec_type, file_type;
-init_daemon_domain(qdumpd)
-
-allow qdumpd ramdump_device:chr_file { open read write };
