@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald-msm8960dt.conf:system/etc/thermald-msm8960dt.conf
+    $(LOCAL_PATH)/configs/thermald-ghost.conf:system/etc/thermald-ghost.conf
 
 # WiFi
 PRODUCT_PACKAGES += \
