@@ -20,6 +20,10 @@ $(call inherit-product, vendor/motorola/ghost/ghost-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Activity Recognition
+PRODUCT_PACKAGES += \
+    activity_recognition.msm8960
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/msp430sensorprocessor.kl:system/usr/keylayout/msp430sensorprocessor.kl
