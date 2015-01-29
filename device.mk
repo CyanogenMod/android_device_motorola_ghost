@@ -20,6 +20,11 @@ $(call inherit-product, vendor/motorola/ghost/ghost-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    libjni_motoSensor \
+    MotoDoze
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/msp430sensorprocessor.kl:system/usr/keylayout/msp430sensorprocessor.kl
