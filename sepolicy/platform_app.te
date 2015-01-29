@@ -1,0 +1,1 @@
+allow platform_app sensors_device:chr_file { getattr open read write ioctl };
