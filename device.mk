@@ -18,7 +18,7 @@
 $(call inherit-product, vendor/motorola/ghost/ghost-vendor.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Keylayout
 PRODUCT_COPY_FILES += \
