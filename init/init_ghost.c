@@ -36,6 +36,34 @@
 
 #include "init_msm.h"
 
+#define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
+
+static void set_cmdline_properties()
+{
+    int i, rc;
+    char prop[PROP_VALUE_MAX];
+
+    struct {
+        const char *src_prop;
+        const char *dest_prop;
+        const char *def_val;
+    } prop_map[] = {
+        { "ro.boot.device", "ro.hw.device", "ghost", },
+        { "ro.boot.hwrev", "ro.hw.hwrev", "0x8300", },
+        { "ro.boot.radio", "ro.hw.radio", "0x1", },
+    };
+
+    for (i = 0; i < ARRAY_SIZE(prop_map); i++) {
+        memset(prop, 0, PROP_VALUE_MAX);
+        rc = property_get(prop_map[i].src_prop, prop);
+        if (rc > 0) {
+            property_set(prop_map[i].dest_prop, prop);
+        } else {
+            property_set(prop_map[i].dest_prop, prop_map[i].def_val);
+        }
+    }
+}
+
 static void gsm_properties()
 {
     property_set("ro.telephony.default_network", "9");
@@ -79,6 +107,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
     rc = property_get("ro.board.platform", platform);
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
+
+    set_cmdline_properties();
 
     property_get("ro.boot.radio", radio);
     property_get("ro.boot.carrier", carrier);
