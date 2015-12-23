@@ -22,7 +22,7 @@
 LOCAL_PATH := device/motorola/ghost
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1052,ghost,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon
+TARGET_OTA_ASSERT_DEVICE := moto_msm8960dt,xt1052,ghost,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
