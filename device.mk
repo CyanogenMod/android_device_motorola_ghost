@@ -15,7 +15,7 @@
 #
 
 # call the proprietary setup
-$(call inherit-product, vendor/motorola/ghost/ghost-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/ghost/ghost-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
