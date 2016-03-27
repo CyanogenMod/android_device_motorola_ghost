@@ -118,16 +118,16 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
         /* xt1058 */
         property_set("ro.product.device", "ghost_retail");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_retail-user 4.4.3 KXA21.12-L1.21 23 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4.3/KXA21.12-L1.21/23:user/release-keys");
+        property_set("ro.build.description", "ghost_retail-user 5.1 LPA23.12-15.5 4 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:5.1/LPA23.12-15.5/4:user/release-keys");
         property_set("ro.build.product", "ghost_retail");
         gsm_properties();
     } else if (ISMATCH(radio, "0x2")) {
         /* xt1060 */
         property_set("ro.product.device", "ghost_verizon");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_verizon-user 4.4 13.11.1Q2.X-69-3 5 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:4.4/13.11.1Q2.X-69-3/5:user/release-keys");
+        property_set("ro.build.description", "ghost_verizon-user 5.1 LPA23.12-39.7 7 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_verizon/ghost:5.1/LPA23.12-39.7/7:user/release-keys");
         property_set("ro.build.product", "ghost_verizon");
 
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
@@ -141,32 +141,32 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver,
         /* xt1052 */
         property_set("ro.product.device", "ghost");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_retde-user 4.4.4 KXA21.12-L1.26 54 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_retde/ghost:4.4.4/KXA21.12-L1.26/54:user/release-keys");
+        property_set("ro.build.description", "ghost_retde-user 5.1 LPA23.12-15.5 3 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_retde/ghost:5.1/LPA23.12-15.5/3:user/release-keys");
         property_set("ro.build.product", "ghost");
         gsm_properties();
     } else if (ISMATCH(radio, "0x4")) {
         /* xt1056 */
         property_set("ro.product.device", "ghost_sprint");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_sprint-user 4.4 13.11.3Q2.X-69-3-8 12 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_sprint/ghost:4.4/13.11.3Q2.X-69-3-8/12:user/release-keys");
+        property_set("ro.build.description", "ghost_sprint-user 5.1 LPA23.12-39.10 11 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_sprint/ghost:5.1/LPA23.12-39.10/11:user/release-keys");
         property_set("ro.build.product", "ghost_sprint");
         cdma_properties("1", "310120", "Sprint");
     } else if (ISMATCH(radio, "0x5")) {
         /* xt1055 */
         property_set("ro.product.device", "ghost_usc");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_usc-user 4.4 13.11.3Q2.X-69-3-2 11 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_usc/ghost:4.4/13.11.3Q2.X-69-3-2/11:user/release-keys");
+        property_set("ro.build.description", "ghost_usc-user 5.1 LPA23.12-21-1 1 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_usc/ghost:5.1/LPA23.12-21-1/1:user/release-keys");
         property_set("ro.build.product", "ghost_usc");
         cdma_properties("0", "311580", "U.S.Cellular");
     } else if (ISMATCH(radio, "0x6")) {
         /* xt1053 */
         property_set("ro.product.device", "ghost_retail");
         property_set("ro.product.model", "Moto X");
-        property_set("ro.build.description", "ghost_retail-user 4.4.3 KXA21.12-L1.21 23 release-keys");
-        property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:4.4.3/KXA21.12-L1.21/23:user/release-keys");
+        property_set("ro.build.description", "ghost_retail-user 5.1 LPA23.12-15.5 4 release-keys");
+        property_set("ro.build.fingerprint", "motorola/ghost_retail/ghost:5.1/LPA23.12-15.5/4:user/release-keys");
         property_set("ro.build.product", "ghost_retail");
         gsm_properties();
     }
