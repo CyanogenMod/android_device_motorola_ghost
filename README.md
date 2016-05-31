@@ -4,6 +4,7 @@ Copyright 2014 - The CyanogenMod Project
 
 This device tree supports:
 
+    ghost_retde (xt1052 - Moto X - GSM-Europe)
     ghost_retail (xt1053 - Moto X - GSM-US)
     ghost_usc (xt1055 - Moto X - US Cellular)
     ghost_sprint (xt1056 - Moto X - Sprint)
